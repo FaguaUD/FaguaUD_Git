@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.1.8" icons="true">  
+  <object id="1" language="java" name="co.edu.udistrital.caseTool.Entidades.CtUsuario" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtUsuario.java" binary="false" label="ctUsuario" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="122" y="0"/>    
+    <execution id="2">      
+      <position height="374" width="156" x="5" y="78"/>    
+    </execution>  
+  </object>  
+  <object id="5" language="java" name="co.edu.udistrital.caseTool.ObjetosDeNegocio.AdministrarFormulariosWBO" 
+    project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/ObjetosDeNegocio/AdministrarFormulariosWBO.java" binary="false" 
+    label="administrarFormulariosWBO" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="291" y="0"/>    
+    <execution id="4">      
+      <position height="332" width="193" x="165" y="99"/>    
+    </execution>    
+    <execution id="11">      
+      <position height="21" width="0" x="0" y="319"/>    
+    </execution>    
+    <execution id="13">      
+      <position height="21" width="0" x="0" y="389"/>    
+    </execution>  
+  </object>  
+  <object id="14" language="java" name="co.edu.udistrital.caseTool.Persistencia.AdminFormularios" 
+    project="CaseTool_tesis" file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Persistencia/AdminFormularios.java" 
+    binary="false" label="adminPersistenciaFormularios" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="7">      
+      <position height="136" width="0" x="0" y="120"/>    
+    </execution>    
+    <execution id="16">      
+      <position height="21" width="0" x="0" y="170"/>    
+    </execution>  
+  </object>  
+  <object id="19" language="java" name="co.edu.udistrital.caseTool.Entidades.CtFormulario" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtFormulario.java" binary="false" type="class" 
+    autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="18">      
+      <position height="21" width="0" x="0" y="214"/>    
+    </execution>    
+    <execution id="9">      
+      <position height="21" width="156" x="532" y="268"/>    
+    </execution>  
+  </object>  
+  <message id="3" operation="btnBuscarFormulario():void">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="6" operation="consultarFormularioNombre(java.lang.String):java.util.List&lt;CtFormulario&gt;">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="8" operation="getNombreFormulario():java.lang.String">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="9"/>  
+  </message>  
+  <message id="10" operation="escribirErrorPantalla(java.lang.String,java.lang.String,java.lang.String):void">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="11"/>  
+  </message>  
+  <message id="12" operation="escribirErrorPantalla(java.lang.String,java.lang.String,java.lang.String):void">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="13"/>  
+  </message>  
+  <message id="15" 
+    operation="ejecutarConsultaParametros(java.lang.String,java.util.ArrayList&lt;java.lang.Object&gt;,Entidad):java.util.List&lt;Entidad&gt;">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="16"/>  
+  </message>  
+  <message id="17" operation="CtFormulario()">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="18"/>  
+  </message>
+</sequence-diagram>

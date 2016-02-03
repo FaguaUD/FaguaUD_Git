@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.8" icons="true" always-add-relationships="true" generalizations="true" realizations="true" 
+  associations="true" dependencies="true" nesting-relationships="true">  
+  <class id="1" language="java" name="co.edu.udistrital.caseTool.Entidades.CtAtributos" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtAtributos.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="994" y="358"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="co.edu.udistrital.caseTool.Entidades.CtPreguntas" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtPreguntas.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="698" y="502"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="co.edu.udistrital.caseTool.Entidades.CtRespuesta" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtRespuesta.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="698" y="358"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="co.edu.udistrital.caseTool.Entidades.CtFormulario" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtFormulario.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="284" y="501"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="co.edu.udistrital.caseTool.Entidades.CtUsuario" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtUsuario.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="285" y="236"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="co.edu.udistrital.caseTool.Entidades.CtEntrevistado" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtEntrevistado.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="286" y="42"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="co.edu.udistrital.caseTool.Entidades.CtOpcionesRespuesta" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtOpcionesRespuesta.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1013" y="503"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="co.edu.udistrital.caseTool.Entidades.CtHecho" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtHecho.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="697" y="239"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="co.edu.udistrital.caseTool.Entidades.CtRole" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtRole.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="285" y="111"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="co.edu.udistrital.caseTool.Entidades.CtProyecto" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtProyecto.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="285" y="383"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="co.edu.udistrital.caseTool.Entidades.CtDimension" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtDimension.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="994" y="106"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="co.edu.udistrital.caseTool.Entidades.CtCubo" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtCubo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="641" y="107"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <association id="13">    
+    <bendpoint x="995" y="51"/>    
+    <bendpoint x="641" y="51"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="14" name="cubos">        
+        <position height="18" width="38" x="510" y="86"/>      
+      </attribute>      
+      <multiplicity id="15" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="16">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="17" name="hecho"/>      
+      <multiplicity id="18" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="19">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="20" name="opcionesRespuesta">        
+        <position height="18" width="104" x="799" y="453"/>      
+      </attribute>      
+      <multiplicity id="21" minimum="0" maximum="1">        
+        <position height="16" width="23" x="951" y="455"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="22">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="23" name="proyectos"/>      
+      <multiplicity id="24" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="25">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="26" name="respuestas"/>      
+      <multiplicity id="27" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="28">    
+    <bendpoint x="1115" y="359"/>    
+    <bendpoint x="1115" y="107"/>    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="29" name="dimensiones"/>      
+      <multiplicity id="30" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="31">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="32" name="formulario">        
+        <position height="18" width="56" x="288" y="449"/>      
+      </attribute>      
+      <multiplicity id="33" minimum="0" maximum="1">        
+        <position height="16" width="23" x="377" y="462"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="34">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="35" name="pregunta"/>      
+      <multiplicity id="36" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="37">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="38" name="ctPregunta"/>      
+      <multiplicity id="39" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="40">    
+    <bendpoint x="178" y="235"/>    
+    <bendpoint x="178" y="110"/>    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="41" name="ctRol">        
+        <position height="18" width="32" x="159" y="137"/>      
+      </attribute>      
+      <multiplicity id="42" minimum="0" maximum="1">        
+        <position height="16" width="23" x="173" y="91"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="43">    
+    <bendpoint x="699" y="563"/>    
+    <bendpoint x="1013" y="563"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="44" name="opciones"/>      
+      <multiplicity id="45" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="46">    
+    <bendpoint x="914" y="282"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="47" name="respuestas">        
+        <position height="18" width="63" x="708" y="294"/>      
+      </attribute>      
+      <multiplicity id="48" minimum="0" maximum="2147483647">        
+        <position height="16" width="21" x="747" y="315"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="49">    
+    <bendpoint x="516" y="358"/>    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="50" name="respuestas"/>      
+      <multiplicity id="51" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="52">    
+    <bendpoint x="393" y="383"/>    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="53" name="proyecto">        
+        <position height="18" width="51" x="365" y="330"/>      
+      </attribute>      
+      <multiplicity id="54" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="55">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="56" name="atributos"/>      
+      <multiplicity id="57" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="58">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="59" name="respuestas">        
+        <position height="18" width="63" x="624" y="283"/>      
+      </attribute>      
+      <multiplicity id="60" minimum="0" maximum="2147483647">        
+        <position height="16" width="21" x="675" y="316"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="61">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="62" name="ctUsuarios"/>      
+      <multiplicity id="63" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="64">    
+    <bendpoint x="178" y="382"/>    
+    <bendpoint x="178" y="444"/>    
+    <bendpoint x="178" y="500"/>    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="65" name="formulariosProyecto">        
+        <position height="18" width="105" x="129" y="447"/>      
+      </attribute>      
+      <multiplicity id="66" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="67">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="68" name="usuariosAsignados">        
+        <position height="18" width="102" x="132" y="268"/>      
+      </attribute>      
+      <multiplicity id="69" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="70">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="71" name="formularios"/>      
+      <multiplicity id="72" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="73">    
+    <bendpoint x="285" y="563"/>    
+    <bendpoint x="699" y="563"/>    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="74" name="preguntasFormulario">        
+        <position height="18" width="107" x="507" y="481"/>      
+      </attribute>      
+      <multiplicity id="75" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="76">    
+    <bendpoint x="492" y="107"/>    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="77" name="cubosProyecto">        
+        <position height="18" width="81" x="510" y="138"/>      
+      </attribute>      
+      <multiplicity id="78" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="79">    
+    <bendpoint x="178" y="235"/>    
+    <bendpoint x="178" y="382"/>    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="80" name="proyectosAsignados">        
+        <position height="18" width="109" x="131" y="334"/>      
+      </attribute>      
+      <multiplicity id="81" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="82">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="83" name="dimensiones"/>      
+      <multiplicity id="84" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="false" package="false" protected="false" private="false" static="false"/>    
+    <operations public="false" package="false" protected="false" private="false" static="false"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

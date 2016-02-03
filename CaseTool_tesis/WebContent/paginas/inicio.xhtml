@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<ui:composition template="plantilla.xhtml">
+
+		<ui:define name="content">
+
+			<f:metadata>
+				<f:event listener="#{bPrincipalHerramienta.configurarVista}"
+					type="preRenderView" />
+			</f:metadata>
+
+			<h:form id="frmCoreApp">
+				<p:panelGrid
+					style="width:100%; font-size: 12px !important; font-family: sans-serif;">
+					<p:row>
+						<p:column
+							style="width:15%;height:250px; vertical-align: top; margin: 0 auto;">
+							<p:tree id="proyectos"
+								value="#{bPrincipalHerramienta.arbolProyectos}" var="proyecto"
+								selectionMode="single"
+								selection="#{bPrincipalHerramienta.nodoSeleccionado}"
+								dynamic="true">
+								<p:ajax event="select" update=":frmCoreApp:pnlGrFormulario"
+									listener="#{bPrincipalHerramienta.seleccionNodo}" />
+								<p:treeNode expandedIcon="ui-icon-folder-open"
+									collapsedIcon="ui-icon-folder-collapsed" type="raizLider">
+									<h:outputText value="#{proyecto.nombreNodo}" />
+								</p:treeNode>
+								<p:treeNode expandedIcon="ui-icon-folder-open"
+									collapsedIcon="ui-icon-folder-collapsed" type="fasereq">
+									<h:outputText value="#{proyecto.nombreNodo}" />
+								</p:treeNode>
+								<p:treeNode expandedIcon="ui-icon-folder-open"
+									collapsedIcon="ui-icon-folder-collapsed"
+									type="fasereqSinPermisos">
+									<h:outputText value="#{proyecto.nombreNodo}" />
+								</p:treeNode>
+								<p:treeNode expandedIcon="ui-icon-folder-open"
+									collapsedIcon="ui-icon-folder-collapsed" type="faseanalisis">
+									<h:outputText value="#{proyecto.nombreNodo}" />
+								</p:treeNode>
+								<p:treeNode expandedIcon="ui-icon-folder-open"
+									collapsedIcon="ui-icon-folder-collapsed" type="raizSinPermisos">
+									<h:outputText value="#{proyecto.nombreNodo}" />
+								</p:treeNode>
+								<p:treeNode expandedIcon="ui-icon-folder-open"
+									collapsedIcon="ui-icon-folder-collapsed"
+									type="faseanalisisLider">
+									<h:outputText value="#{proyecto.nombreNodo}" />
+								</p:treeNode>
+								<p:treeNode type="formulario" icon="ui-icon-document">
+									<h:outputText value="#{proyecto.nombreNodo}" />
+								</p:treeNode>
+								<p:treeNode type="cuboAnalisis" icon="ui-icon-document">
+									<h:outputText value="#{proyecto.nombreNodo}" />
+								</p:treeNode>
+								<p:treeNode type="cuboMostrar" icon="ui-icon-document">
+									<h:outputText value="#{proyecto.nombreNodo}" />
+								</p:treeNode>
+								<p:treeNode type="formSinPermisos" icon="ui-icon-document">
+									<h:outputText value="#{proyecto.nombreNodo}" />
+								</p:treeNode>
+							</p:tree>
+							<p:contextMenu for="proyectos" nodeType="raizLider"
+								style="font-size: 12px !important; font-family: sans-serif;">
+								<p:menuitem value="Editar proyecto"
+									actionListener="#{bPrincipalHerramienta.prepararModificacion}"
+									icon="ui-icon-pencil" />
+							</p:contextMenu>
+							<p:contextMenu for="proyectos" nodeType="fasereq"
+								style="font-size: 12px !important; font-family: sans-serif;">
+								<p:menuitem value="Agregar formulario"
+									actionListener="#{bPrincipalHerramienta.prepararCrearFormulario}"
+									icon="ui-icon-pencil" />
+							</p:contextMenu>
+							<p:contextMenu for="proyectos" nodeType="formulario"
+								style="font-size: 12px !important; font-family: sans-serif;">
+								<p:menuitem value="Editar formulario"
+									actionListener="#{bPrincipalHerramienta.prepararModificarFormulario}"
+									icon="ui-icon-pencil" />
+								<p:menuitem value="Eliminar formulario"
+									actionListener="#{bPrincipalHerramienta.eliminarFormulario}"
+									icon="ui-icon-close" rendered="false" />
+							</p:contextMenu>
+							<p:contextMenu for="proyectos" nodeType="faseanalisis"
+								style="font-size: 12px !important; font-family: sans-serif;">
+								<p:menuitem value="Crear Cubo"
+									actionListener="#{bPrincipalHerramienta.preparaCrearCubo}"
+									icon="ui-icon-circle-plus" />
+							</p:contextMenu>
+						</p:column>
+						<p:column style="width:85%;  vertical-align: top;">
+							<h:panelGroup id="pnlGrFormulario">
+								<h:panelGroup id="pnlGrFormLider"
+									rendered="#{bPrincipalHerramienta.mostrarRespuestasFormulario and bPrincipalHerramienta.seleccionandoFormulario}">
+									<p:panelGrid
+										style="width:100%; font-size: 12px !important; font-family: sans-serif;">
+										<p:row>
+											<p:column>
+												<p:outputLabel
+													value="Formulario: #{bPrincipalHerramienta.formularioSeleccionado.nombreFormulario}" />
+											</p:column>
+											<p:column>
+												<p:outputLabel
+													value="Total preguntas: #{bPrincipalHerramienta.totalPreguntas}" />
+											</p:column>
+										</p:row>
+										<p:row>
+											<p:column colspan="2">
+												<p:dataTable var="respFrm"
+													value="#{bPrincipalHerramienta.formularioSeleccionado.respuestas}">
+													<p:column headerText="Pregunta">
+														<p:outputLabel value="#{respFrm.pregunta.enunciado}" />
+													</p:column>
+													<p:column headerText="Respuesta">
+														<p:outputLabel
+															value="#{respFrm.opcionesRespuesta.enunciadoOpcion}" />
+													</p:column>
+													<p:column headerText="Entrevistado">
+														<p:outputLabel value="#{respFrm.nombreEntrevistado}" />
+													</p:column>
+													<p:column headerText="Fecha respuesta">
+														<p:outputLabel value="#{respFrm.fechaRespuesta}" />
+													</p:column>
+												</p:dataTable>
+											</p:column>
+										</p:row>
+									</p:panelGrid>
+
+
+								</h:panelGroup>
+								<h:panelGroup id="pnlGrFormReq"
+									rendered="#{bPrincipalHerramienta.usuarioReq and bPrincipalHerramienta.seleccionandoFormulario and !bPrincipalHerramienta.mostrarRespuestasFormulario}">
+
+									<p:panelGrid
+										style="width:100%; font-size: 12px !important; font-family: sans-serif;">
+										<p:row>
+											<p:column>
+												<p:outputLabel
+													value="Formulario: #{bPrincipalHerramienta.formularioSeleccionado.nombreFormulario}" />
+											</p:column>
+											<p:column>
+												<p:outputLabel
+													value="Total preguntas: #{bPrincipalHerramienta.totalPreguntas}" />
+											</p:column>
+										</p:row>
+										<p:row>
+											<p:column>
+												<p:outputLabel value="Entrevistado: " />
+											</p:column>
+											<p:column>
+												<p:selectOneMenu
+													value="#{bPrincipalHerramienta.respuesta.entrevistado}"
+													required="true"
+													requiredMessage="No ha seleccionado ningún entrevistado">
+													<f:selectItem itemLabel="Seleccione.." />
+													<f:selectItems
+														value="#{bPrincipalHerramienta.entrevistados}" />
+												</p:selectOneMenu>
+											</p:column>
+										</p:row>
+										<p:row>
+											<p:column>
+												<p:outputLabel value="Fecha respuesta: " />
+											</p:column>
+											<p:column>
+												<p:inputText disabled="true"
+													value="#{bPrincipalHerramienta.respuesta.fechaRespuesta}" />
+											</p:column>
+										</p:row>
+										<p:row>
+											<p:column colspan="2">
+												<p:outputLabel
+													value="#{bPrincipalHerramienta.indice+1} #{bPrincipalHerramienta.preguntaActiva.enunciado}" />
+											</p:column>
+										</p:row>
+										<p:row>
+											<p:column colspan="2">
+												<h:panelGroup
+													rendered="#{bPrincipalHerramienta.preguntaActiva.tipo == 'single'}">
+													<p:dataTable var="opcion" selectionMode="single"
+														selection="#{bPrincipalHerramienta.opcionSingleSeleccionada}"
+														value="#{bPrincipalHerramienta.preguntaActiva.opciones}"
+														rowKey="#{opcion.idOpcionRespuesta}">
+														<p:column headerText="Opción">
+															<p:outputLabel value="#{opcion.enunciadoOpcion}" />
+														</p:column>
+													</p:dataTable>
+												</h:panelGroup>
+												<h:panelGroup
+													rendered="#{bPrincipalHerramienta.preguntaActiva.tipo == 'multiple'}">
+													<p:dataTable var="opcion" selectionMode="multiple"
+														selection="#{bPrincipalHerramienta.opcionesMultipleSeleccionadas}"
+														value="#{bPrincipalHerramienta.preguntaActiva.opciones}"
+														rowKey="#{opcion.idOpcionRespuesta}">
+														<p:column headerText="Opción">
+															<p:outputLabel value="#{opcion.enunciadoOpcion}" />
+														</p:column>
+													</p:dataTable>
+												</h:panelGroup>
+											</p:column>
+										</p:row>
+										<p:row>
+											<p:column colspan="2">
+												<p:commandButton value="Guardar"
+													actionListener="#{bPrincipalHerramienta.cargarSiguientePregunta}"
+													update=":frmCoreApp:pnlGrFormulario :frmCoreApp:pngAlertas" />
+											</p:column>
+										</p:row>
+
+
+									</p:panelGrid>
+
+
+								</h:panelGroup>
+								<h:panelGroup id="pnlGrCubo"
+									rendered="#{bPrincipalHerramienta.creandoCubo}">
+
+									<p:panelGrid
+										style="width:100%; font-size: 12px !important; font-family: sans-serif;">
+										<p:row>
+											<p:column>
+												<p:outputLabel value="Nombre Cubo:" />
+											</p:column>
+											<p:column>
+												<p:inputText
+													value="#{bPrincipalHerramienta.cuboOperacion.nombre}" />
+											</p:column>
+										</p:row>
+										<p:row>
+											<p:column colspan="2">
+												<h:panelGroup
+													rendered="#{bPrincipalHerramienta.cuboOperacion.hecho != null}">
+													<p:outputLabel
+														value="Hecho: #{bPrincipalHerramienta.cuboOperacion.hecho.nombre}" />
+												</h:panelGroup>
+											</p:column>
+										</p:row>
+										<p:row>
+											<p:column colspan="2">
+												<h:panelGroup
+													rendered="#{bPrincipalHerramienta.cuboOperacion.hecho != null}">
+													<p:dataTable var="respFrm"
+														value="#{bPrincipalHerramienta.cuboOperacion.hecho.respuestas}">
+														<p:column headerText="Formulario">
+															<p:outputLabel
+																value="#{respFrm.formulario.nombreFormulario}" />
+														</p:column>
+														<p:column headerText="Pregunta">
+															<p:outputLabel value="#{respFrm.pregunta.enunciado}" />
+														</p:column>
+														<p:column headerText="Respuesta">
+															<p:outputLabel
+																value="#{respFrm.opcionesRespuesta.enunciadoOpcion}" />
+														</p:column>
+														<p:column headerText="Entrevistado">
+															<p:outputLabel value="#{respFrm.nombreEntrevistado}" />
+														</p:column>
+
+													</p:dataTable>
+												</h:panelGroup>
+											</p:column>
+										</p:row>
+										<p:row>
+											<p:column colspan="2">
+												<p:outputLabel value="Dimensiones" />
+											</p:column>
+										</p:row>
+										<p:row>
+											<p:column colspan="2">
+												<h:panelGroup
+													rendered="#{bPrincipalHerramienta.cuboOperacion.dimensiones != null}">
+													<p:dataTable var="dimension"
+														value="#{bPrincipalHerramienta.cuboOperacion.dimensiones}">
+														<p:column headerText="Dimensión">
+															<p:outputLabel value="#{dimension.nombre}" />
+														</p:column>
+														<p:column>
+															<p:commandButton title="Ver Detalle"
+																icon="ui-icon-zoomin" update=":frmCoreApp:pnlGrCubo"
+																actionListener="#{bPrincipalHerramienta.preparaVerDetalleDimension(dimension)}" />
+														</p:column>
+
+													</p:dataTable>
+
+												</h:panelGroup>
+											</p:column>
+										</p:row>
+										<p:row>
+											<p:column>
+												<p:commandButton value="Agregar Hecho"
+													actionListener="#{bPrincipalHerramienta.preparaCrearHecho}"
+													rendered="#{bPrincipalHerramienta.cuboOperacion.hecho == null}"
+													update=":frmCoreApp:pnlGrCubo" />
+											</p:column>
+											<p:column>
+												<p:commandButton value="Agregar Dimensión"
+													actionListener="#{bPrincipalHerramienta.preparaCrearDimension}"
+													update=":frmCoreApp:pnlGrCubo"
+													rendered="#{!bPrincipalHerramienta.crearHecho and !bPrincipalHerramienta.crearDimension}" />
+											</p:column>
+										</p:row>
+										<p:row>
+											<p:column colspan="2">
+												<p:column>
+													<p:commandButton value="Guardar Cubo"
+														actionListener="#{bPrincipalHerramienta.guardarCubo}"
+														update=":frmCoreApp:pnlGrCubo :frmCoreApp:pngAlertas"
+														rendered="#{bPrincipalHerramienta.cuboOperacion.dimensiones != null
+														 and bPrincipalHerramienta.cuboOperacion.hecho != null
+														 and !bPrincipalHerramienta.crearDimension}" />
+												</p:column>
+											</p:column>
+										</p:row>
+									</p:panelGrid>
+
+									<h:panelGroup id="pnlGrCrearDimension"
+										rendered="#{bPrincipalHerramienta.crearDimension || bPrincipalHerramienta.mostrarInfoDimension}">
+										<p:panelGrid
+											style="width:100%; font-size: 12px !important; font-family: sans-serif;">
+
+											<p:row>
+												<p:column>
+													<p:outputLabel value="Nombre Dimension:" />
+												</p:column>
+												<p:column>
+													<p:inputText
+														value="#{bPrincipalHerramienta.dimensionNueva.nombre}" />
+												</p:column>
+											</p:row>
+											<p:row>
+												<p:column colspan="2">
+													<p:dataTable var="respFrm"
+														value="#{bPrincipalHerramienta.formularioSeleccionado.respuestas}"
+														selectionMode="multiple"
+														selection="#{bPrincipalHerramienta.dimensionNueva.respuestas}"
+														rowKey="#{respFrm.idRespuesta}">
+														<p:column headerText="Formulario">
+															<p:outputLabel
+																value="#{respFrm.formulario.nombreFormulario}" />
+														</p:column>
+														<p:column headerText="Pregunta">
+															<p:outputLabel value="#{respFrm.pregunta.enunciado}" />
+														</p:column>
+														<p:column headerText="Respuesta">
+															<p:outputLabel
+																value="#{respFrm.opcionesRespuesta.enunciadoOpcion}" />
+														</p:column>
+														<p:column headerText="Entrevistado">
+															<p:outputLabel value="#{respFrm.nombreEntrevistado}" />
+														</p:column>
+
+													</p:dataTable>
+												</p:column>
+											</p:row>
+											<p:row>
+												<p:column colspan="2">
+
+													<p:dataTable var="atriFrm"
+														value="#{bPrincipalHerramienta.dimensionNueva.atributos}">
+														<p:column headerText="Atributo">
+															<p:outputLabel value="#{atriFrm.nombre}" />
+														</p:column>
+														<p:column headerText="Respuestas asociadas">
+															<p:dataList var="res" value="#{atriFrm.respuestas}">
+																<p:panelGrid columns="1">
+
+																	<p:outputLabel
+																		value="Formulario: #{res.formulario.nombreFormulario}" />
+
+																	<p:outputLabel
+																		value="Pregunta: #{res.pregunta.enunciado}" />
+
+																	<p:outputLabel
+																		value="Respuesta: #{res.opcionesRespuesta.enunciadoOpcion}" />
+
+																	<p:outputLabel
+																		value="Entrevistado #{res.nombreEntrevistado}" />
+
+																</p:panelGrid>
+
+															</p:dataList>
+														</p:column>
+
+													</p:dataTable>
+												</p:column>
+											</p:row>
+											<p:row>
+												<p:column colspan="2">
+													<p:commandButton value="Agregar Atributo"
+														rendered="#{!bPrincipalHerramienta.mostrarInfoDimension}"
+														actionListener="#{bPrincipalHerramienta.preparaCrearAtributo}"
+														update=":frmCoreApp:pnlGrCubo" />
+												</p:column>
+											</p:row>
+											<p:row>
+												<p:column colspan="2">
+													<p:commandButton value="Guardar dimensión"
+														rendered="#{!bPrincipalHerramienta.mostrarInfoDimension}"
+														actionListener="#{bPrincipalHerramienta.guardarDimension}"
+														update=":frmCoreApp:pnlGrCubo" />
+												</p:column>
+											</p:row>
+											<p:row>
+												<p:column colspan="2">
+													<p:commandButton value="Volver"
+														rendered="#{bPrincipalHerramienta.mostrarInfoDimension}"
+														actionListener="#{bPrincipalHerramienta.volverVerDetalle}"
+														update=":frmCoreApp:pnlGrCubo" />
+												</p:column>
+											</p:row>
+
+
+										</p:panelGrid>
+									</h:panelGroup>
+
+									<h:panelGroup id="pnlGrCrearAtributo"
+										rendered="#{bPrincipalHerramienta.crearAtributo}">
+
+										<p:panelGrid
+											style="width:100%; font-size: 12px !important; font-family: sans-serif;">
+
+											<p:row>
+												<p:column>
+													<p:outputLabel value="Nombre Atributo: " />
+												</p:column>
+												<p:column>
+													<p:inputText
+														value="#{bPrincipalHerramienta.atributoNuevo.nombre}" />
+												</p:column>
+											</p:row>
+											<p:row>
+												<p:column colspan="2">
+													<p:dataTable var="respFrm"
+														value="#{bPrincipalHerramienta.formularioSeleccionado.respuestas}"
+														selectionMode="multiple"
+														selection="#{bPrincipalHerramienta.atributoNuevo.respuestas}"
+														rowKey="#{respFrm.idRespuesta}">
+														<p:column headerText="Formulario">
+															<p:outputLabel
+																value="#{respFrm.formulario.nombreFormulario}" />
+														</p:column>
+														<p:column headerText="Pregunta">
+															<p:outputLabel value="#{respFrm.pregunta.enunciado}" />
+														</p:column>
+														<p:column headerText="Respuesta">
+															<p:outputLabel
+																value="#{respFrm.opcionesRespuesta.enunciadoOpcion}" />
+														</p:column>
+														<p:column headerText="Entrevistado">
+															<p:outputLabel value="#{respFrm.nombreEntrevistado}" />
+														</p:column>
+
+													</p:dataTable>
+												</p:column>
+											</p:row>
+											<p:row>
+												<p:column colspan="2">
+													<p:commandButton value="Guardar atributo"
+														actionListener="#{bPrincipalHerramienta.guardarAtributo}"
+														update=":frmCoreApp:pnlGrCubo" />
+												</p:column>
+
+											</p:row>
+
+
+										</p:panelGrid>
+
+									</h:panelGroup>
+
+
+
+									<h:panelGroup id="pnlGrCrearHecho"
+										rendered="#{bPrincipalHerramienta.crearHecho}">
+
+
+
+										<p:panelGrid
+											style="width:100%; font-size: 12px !important; font-family: sans-serif;">
+
+											<p:row>
+												<p:column>
+													<p:outputLabel value="Nombre Hecho:" />
+												</p:column>
+												<p:column>
+													<p:inputText
+														value="#{bPrincipalHerramienta.cuboOperacion.hecho.nombre}" />
+												</p:column>
+											</p:row>
+											<p:row>
+												<p:column colspan="2">
+													<p:dataTable var="respFrm"
+														value="#{bPrincipalHerramienta.formularioSeleccionado.respuestas}"
+														selectionMode="multiple"
+														selection="#{bPrincipalHerramienta.cuboOperacion.hecho.respuestas}"
+														rowKey="#{respFrm.idRespuesta}">
+														<p:column headerText="Formulario">
+															<p:outputLabel
+																value="#{respFrm.formulario.nombreFormulario}" />
+														</p:column>
+														<p:column headerText="Pregunta">
+															<p:outputLabel value="#{respFrm.pregunta.enunciado}" />
+														</p:column>
+														<p:column headerText="Respuesta">
+															<p:outputLabel
+																value="#{respFrm.opcionesRespuesta.enunciadoOpcion}" />
+														</p:column>
+														<p:column headerText="Entrevistado">
+															<p:outputLabel value="#{respFrm.nombreEntrevistado}" />
+														</p:column>
+
+													</p:dataTable>
+												</p:column>
+
+											</p:row>
+
+											<p:row>
+												<p:column colspan="2">
+													<p:commandButton value="Guardar hecho"
+														actionListener="#{bPrincipalHerramienta.guardarHecho}"
+														update=":frmCoreApp" />
+												</p:column>
+
+											</p:row>
+
+
+
+										</p:panelGrid>
+									</h:panelGroup>
+
+								</h:panelGroup>
+
+
+							</h:panelGroup>
+
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column colspan="2"
+							style="height:150px;font-size: 12px !important; font-family: sans-serif; vertical-align: top; margin: 0 auto;">
+
+							<h:panelGroup id="pngAlertas">
+								<p:dataTable var="alerta"
+									value="#{bPrincipalHerramienta.alertas}">
+									<f:facet name="header"> Alertas proyecto </f:facet>
+
+									<p:column
+										style="color:#FFCC00;font-weight:bold;background-color:black">
+										<h:outputText value="#{alerta.descripcion}" />
+									</p:column>
+
+
+								</p:dataTable>
+							</h:panelGroup>
+						</p:column>
+
+					</p:row>
+				</p:panelGrid>
+			</h:form>
+
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

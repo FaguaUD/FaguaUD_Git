@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.8" icons="true" always-add-relationships="true" generalizations="true" realizations="true" 
+  associations="true" dependencies="true" nesting-relationships="true">  
+  <package id="1" language="java" name="co.edu.udistrital.caseTool.Constantes" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Constantes" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="183" y="269"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="2" language="java" name="co.edu.udistrital.caseTool.TransferObject" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/TransferObject" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="793" y="60"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="3" language="java" name="co.edu.udistrital.caseTool.Entidades" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="794" y="204"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="4" language="java" name="co.edu.udistrital.caseTool.Persistencia" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Persistencia" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="794" y="346"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="5" language="java" name="co.edu.udistrital.caseTool.GestiónFechas" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/GestiónFechas" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="480" y="70"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="6" language="java" name="co.edu.udistrital.caseTool.ObjetosDeNegocio" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/ObjetosDeNegocio" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="479" y="157"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="7" language="java" name="co.edu.udistrital.caseTool.GestiónEmail" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/GestiónEmail" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="183" y="158"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <dependency id="8">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="9">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="10">    
+    <bendpoint x="183" y="351"/>    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="11">    
+    <bendpoint x="479" y="275"/>    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="12">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="13">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <dependency id="14">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="15">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="16">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="17">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

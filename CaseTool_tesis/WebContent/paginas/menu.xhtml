@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<body>
+	<ui:composition>
+
+		<h:form id="frmMenu">
+
+			<f:metadata>
+				<f:event listener="#{bMenu.configurarVista}" type="preRenderView" />
+			</f:metadata>
+
+			<p:panelGrid columns="4" styleClass="menuSuperior">
+				<p:menubar rendered="#{!bMenu.sinUsuario}">
+					<p:submenu label="Archivo" icon="ui-icon-script"
+						rendered="#{bMenu.usuarioLider or bMenu.otroUsuario}">
+
+						<p:menuitem value="Nuevo Proyecto" icon="ui-icon-document"
+							actionListener="#{bMenu.prepareAdminProyectos}"
+							onclick="PF('adminProyecto').show();"
+							rendered="#{bMenu.usuarioLider}" />
+
+						<p:menuitem value="Abrir Proyecto" icon="ui-icon-folder-open"
+							actionListener="#{bMenu.prepareAbrirProyecto}"
+							onclick="PF('abrirProyecto').show();"
+							rendered="#{bMenu.usuarioLider or bMenu.otroUsuario}" />
+
+
+					</p:submenu>
+
+					<p:submenu label="Gestionar Usuario" icon="ui-icon-suitcase"
+						rendered="#{bMenu.usuarioAdmin or bMenu.usuarioLider or bMenu.usuarioReq}">
+
+
+						<p:menuitem value="Modificar Información personal"
+							icon="ui-icon-contact" onclick="PF('adminUsuarios').show();"
+							rendered="#{bMenu.usuarioAdmin or bMenu.usuarioLider}" />
+						<p:menuitem value="Administrar líderes de proyecto"
+							actionListener="#{bMenu.prepareAdminSolicitudes}"
+							icon="ui-icon-person" onclick="PF('adminSolicitudes').show();"
+							rendered="#{bMenu.usuarioAdmin}" />
+						<p:menuitem value="Administrar entrevistados"
+							icon="ui-icon-person" onclick="PF('adminEntrevistados').show();"
+							rendered="#{bMenu.usuarioLider or bMenu.usuarioReq}" />
+						<p:menuitem value="Administrar usuarios proyecto"
+							actionListener="#{bMenu.prepareAdminSolicitudes}"
+							icon="ui-icon-person" onclick="PF('adminSolicitudes').show();"
+							rendered="#{bMenu.usuarioLider}" />
+
+
+					</p:submenu>
+
+
+					<p:submenu label="Ayuda" icon="ui-icon-help"
+						rendered="#{!bMenu.sinUsuario}">
+
+						<p:menuitem value="Manual de usuario" icon="ui-icon-note"
+							onclick="window.open('manual/Manual de Usuario Fagua-UD.pdf')" />
+
+						<p:menuitem value="Acerca de " icon="ui-icon-person"
+							action="soporte" />
+
+
+
+					</p:submenu>
+
+				</p:menubar>
+
+				<h:panelGroup styleClass="cerrar">
+
+					<p:commandLink value="Volver al inicio" action="bienvenida"
+						rendered="#{bMenu.sinUsuario}" />
+
+					<p:outputLabel
+						value="Bienvenido #{bMenu.usuarioLogueado.nombreCompleto}"
+						rendered="#{!bMenu.sinUsuario}" />
+
+					<p:commandButton actionListener="#{bMenu.btnCerrarSesion}"
+						icon="ui-icon-circle-close" title="Cerrar Sesión"
+						styleClass="fondo" rendered="#{!bMenu.sinUsuario}" />
+				</h:panelGroup>
+
+			</p:panelGrid>
+
+
+
+		</h:form>
+
+		<p:dialog header="Modal Dialog" widgetVar="enConstruccion"
+			modal="true" height="100">
+			<h:outputText value="En construcción" />
+		</p:dialog>
+
+		<p:dialog widgetVar="adminUsuarios" modal="true" height="400px"
+			resizable="false" draggable="false">
+			<ui:include src="/paginas/adminUsuario.xhtml"></ui:include>
+		</p:dialog>
+
+		<p:dialog widgetVar="adminSolicitudes" modal="true" height="400px"
+			width="600px" resizable="false" draggable="false">
+			<ui:include src="/paginas/adminSolicitudes.xhtml"></ui:include>
+		</p:dialog>
+
+		<p:dialog widgetVar="adminProyecto" modal="true" height="400px"
+			width="600px" resizable="false" draggable="false">
+			<ui:include src="/paginas/adminProyecto.xhtml"></ui:include>
+		</p:dialog>
+
+		<p:dialog widgetVar="abrirProyecto" modal="true" height="400px"
+			width="600px" resizable="false" draggable="false">
+			<ui:include src="/paginas/abrirProyecto.xhtml"></ui:include>
+		</p:dialog>
+
+		<p:dialog widgetVar="adminEntrevistados" modal="true" height="400px"
+			width="600px" resizable="false" draggable="false">
+			<ui:include src="/paginas/adminEntrevistados.xhtml"></ui:include>
+		</p:dialog>
+
+		<p:dialog widgetVar="adminFormularios" modal="true" height="400px"
+			width="600px" resizable="false" draggable="false">
+			<ui:include src="/paginas/adminFormularios.xhtml"></ui:include>
+		</p:dialog>
+
+
+	</ui:composition>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.1.8" icons="true">  
+  <object id="1" language="java" name="co.edu.udistrital.caseTool.Entidades.CtUsuario" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtUsuario.java" binary="false" label="ctUsuario" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="99" y="0"/>    
+    <execution id="2">      
+      <position height="419" width="156" x="5" y="409"/>    
+    </execution>    
+    <execution id="5">      
+      <position height="314" width="156" x="5" y="841"/>    
+    </execution>    
+    <execution id="8">      
+      <position height="21" width="7" x="80" y="960"/>    
+    </execution>    
+    <execution id="9">      
+      <position height="320" width="156" x="5" y="78"/>    
+    </execution>  
+  </object>  
+  <object id="12" language="java" name="co.edu.udistrital.caseTool.ObjetosDeNegocio.IngresoUsuarioWBO" 
+    project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/ObjetosDeNegocio/IngresoUsuarioWBO.java" binary="false" 
+    label="ingresoUsuarioWBO" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="225" y="0"/>    
+    <execution id="4">      
+      <position height="377" width="193" x="165" y="430"/>    
+    </execution>    
+    <execution id="34">      
+      <position height="21" width="0" x="0" y="765"/>    
+    </execution>    
+    <execution id="7">      
+      <position height="272" width="193" x="165" y="862"/>    
+    </execution>    
+    <execution id="38">      
+      <position height="21" width="0" x="0" y="929"/>    
+    </execution>    
+    <execution id="45">      
+      <position height="21" width="0" x="0" y="1088"/>    
+    </execution>    
+    <execution id="11">      
+      <position height="278" width="193" x="165" y="99"/>    
+    </execution>  
+  </object>  
+  <object id="58" language="java" name="co.edu.udistrital.caseTool.Persistencia.AdminFormularios" 
+    project="CaseTool_tesis" file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Persistencia/AdminFormularios.java" 
+    binary="false" label="adminPersistenciaFormulario" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="47">      
+      <position height="84" width="0" x="0" y="120"/>    
+    </execution>    
+    <execution id="60">      
+      <position height="21" width="0" x="0" y="162"/>    
+    </execution>  
+  </object>  
+  <object id="61" language="java" name="co.edu.udistrital.caseTool.Entidades.CtFormulario" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtFormulario.java" binary="false" 
+    label="formularioSeleccionado" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="14">      
+      <position height="21" width="0" x="0" y="447"/>    
+    </execution>    
+    <execution id="32">      
+      <position height="21" width="0" x="0" y="711"/>    
+    </execution>    
+    <execution id="20">      
+      <position height="21" width="156" x="362" y="522"/>    
+    </execution>    
+    <execution id="49">      
+      <position height="21" width="156" x="692" y="214"/>    
+    </execution>    
+    <execution id="53">      
+      <position height="21" width="156" x="692" y="268"/>    
+    </execution>  
+  </object>  
+  <object id="62" language="java" name="co.edu.udistrital.caseTool.Entidades.CtPreguntas" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtPreguntas.java" binary="false" label="pregunta" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="57">      
+      <position height="21" width="0" x="0" y="335"/>    
+    </execution>  
+  </object>  
+  <object id="63" language="java" name="co.edu.udistrital.caseTool.Entidades.CtProyecto" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtProyecto.java" binary="false" 
+    label="proyectoActual" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="41">      
+      <position height="21" width="0" x="0" y="982"/>    
+    </execution>  
+  </object>  
+  <object id="64" language="java" name="co.edu.udistrital.caseTool.Persistencia.AdminProyectos" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Persistencia/AdminProyectos.java" binary="false" 
+    label="adminPersistenciaProyectos" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="43">      
+      <position height="84" width="0" x="0" y="1029"/>    
+    </execution>    
+    <execution id="66">      
+      <position height="21" width="0" x="0" y="1071"/>    
+    </execution>  
+  </object>  
+  <object id="67" language="java" name="co.edu.udistrital.caseTool.Entidades.CtCubo" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtCubo.java" binary="false" label="cuboOperacion" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="16">      
+      <position height="21" width="0" x="0" y="473"/>    
+    </execution>    
+    <execution id="36">      
+      <position height="21" width="0" x="0" y="883"/>    
+    </execution>  
+  </object>  
+  <object id="68" language="java" name="co.edu.udistrital.caseTool.Persistencia.AdminRespuesta" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Persistencia/AdminRespuesta.java" binary="false" 
+    label="adminPersistenciaRespuesta" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="18">      
+      <position height="21" width="0" x="0" y="499"/>    
+    </execution>    
+    <execution id="22">      
+      <position height="21" width="0" x="0" y="564"/>    
+    </execution>    
+    <execution id="51">      
+      <position height="21" width="0" x="0" y="243"/>    
+    </execution>  
+  </object>  
+  <object id="69" language="java" name="co.edu.udistrital.caseTool.Entidades.CtRespuesta" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtRespuesta.java" binary="false" label="ctRespuesta" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="24">      
+      <position height="21" width="0" x="0" y="594"/>    
+    </execution>    
+    <execution id="26">      
+      <position height="21" width="0" x="0" y="627"/>    
+    </execution>    
+    <execution id="30">      
+      <position height="21" width="0" x="0" y="685"/>    
+    </execution>    
+    <execution id="55">      
+      <position height="21" width="0" x="0" y="304"/>    
+    </execution>  
+  </object>  
+  <object id="70" language="java" name="co.edu.udistrital.caseTool.Entidades.CtEntrevistado" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtEntrevistado.java" binary="false" 
+    label="entrevistadoRespuesta" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="28">      
+      <position height="21" width="0" x="0" y="658"/>    
+    </execution>  
+  </object>  
+  <message id="3" operation="preparaCrearCubo():void">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="6" operation="guardarCubo():void">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="10" 
+    operation="todosFormulariosResueltos(java.util.List&lt;co.edu.udistrital.caseTool.Entidades.CtFormulario&gt;):boolean">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="11"/>  
+  </message>  
+  <message id="13" operation="CtFormulario()">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="14"/>  
+  </message>  
+  <message id="15" operation="CtCubo()">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="16"/>  
+  </message>  
+  <message id="17" operation="consultarRespuestasFormulario(java.lang.Long):java.util.List&lt;CtRespuesta&gt;">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="18"/>  
+  </message>  
+  <message id="19" operation="getIdFormulario():java.lang.Long">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="20"/>  
+  </message>  
+  <message id="21" 
+    operation="consultarEntrevistadoRespuesta(java.lang.Long):co.edu.udistrital.caseTool.Entidades.CtEntrevistado">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="22"/>  
+  </message>  
+  <message id="23" operation="getEntrevistado():java.lang.Long">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="24"/>  
+  </message>  
+  <message id="25" operation="setNombreEntrevistado(java.lang.String):void">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="26"/>  
+  </message>  
+  <message id="27" operation="getNombre():java.lang.String">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="28"/>  
+  </message>  
+  <message id="29" operation="setNombreEntrevistado(java.lang.String):void">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="30"/>  
+  </message>  
+  <message id="31" 
+    operation="setRespuestas(java.util.List&lt;co.edu.udistrital.caseTool.Entidades.CtRespuesta&gt;):void">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="32"/>  
+  </message>  
+  <message id="33" operation="setCreandoCubo(boolean):void">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="34"/>  
+  </message>  
+  <message id="35" operation="setIdeUsuarioCreacion(java.lang.Long):void">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="36"/>  
+  </message>  
+  <message id="37" operation="getUsuarioLogueado():co.edu.udistrital.caseTool.Entidades.CtUsuario">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="38"/>  
+  </message>  
+  <message id="39" operation="getIdeUsuario():java.lang.Long">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="8"/>  
+  </message>  
+  <message id="40" operation="addCubo(co.edu.udistrital.caseTool.Entidades.CtCubo):void">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="41"/>  
+  </message>  
+  <message id="42" operation="modificarProyecto(co.edu.udistrital.caseTool.Entidades.CtProyecto):void">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="43"/>  
+  </message>  
+  <message id="44" operation="escribirErrorPantalla(java.lang.String,java.lang.String,java.lang.String):void">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="45"/>  
+  </message>  
+  <message id="46" operation="consultarPreguntasFormulario(java.lang.Long):java.util.List&lt;CtPreguntas&gt;">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="47"/>  
+  </message>  
+  <message id="48" operation="getIdFormulario():java.lang.Long">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="49"/>  
+  </message>  
+  <message id="50" operation="consultarRespuestasFormulario(java.lang.Long):java.util.List&lt;CtRespuesta&gt;">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="51"/>  
+  </message>  
+  <message id="52" operation="getIdFormulario():java.lang.Long">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="53"/>  
+  </message>  
+  <message id="54" operation="getPregunta():co.edu.udistrital.caseTool.Entidades.CtPreguntas">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="55"/>  
+  </message>  
+  <message id="56" operation="getIdPregunta():java.lang.Long">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="57"/>  
+  </message>  
+  <message id="59" operation="ejecutarConsulta(java.lang.String):java.util.List&lt;Entidad&gt;">    
+    <end type="SOURCE" refId="47"/>    
+    <end type="TARGET" refId="60"/>  
+  </message>  
+  <message id="65" operation="actualizar(Entidad):void">    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="66"/>  
+  </message>
+</sequence-diagram>

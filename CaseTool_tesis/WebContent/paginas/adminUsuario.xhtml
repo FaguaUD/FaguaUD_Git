@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<ui:composition>
+
+
+		<h:form id="frmCrearUsuario">
+
+			<f:metadata>
+				<f:event listener="#{bAdminUsuarios.configurarVista}"
+					type="preRenderView" />
+			</f:metadata>
+
+			<p:panelGrid columns="2" styleClass="tabla"
+				rendered="#{bAdminUsuarios.permitiendoModificar}">
+
+
+				<p:outputLabel value="Rol:" />
+				<p:selectOneMenu
+					value="#{bAdminUsuarios.usuarioOperacion.ctRol.ideRol}"
+					rendered="#{bAdminUsuarios.modificandoUsuariosProyecto or !bAdminUsuarios.modificando}">
+					<f:selectItems value="#{bAdminUsuarios.roles}" />
+				</p:selectOneMenu>
+
+				<p:outputLabel
+					value="#{bAdminUsuarios.usuarioOperacion.ctRol.descripcionRol}"
+					rendered="#{!bAdminUsuarios.modificandoUsuariosProyecto and bAdminUsuarios.modificando}" />
+
+				<p:outputLabel value="Código: " />
+				<p:inputText value="#{bAdminUsuarios.usuarioOperacion.ideUsuario}"
+					disabled="true">
+					<f:validateDoubleRange />
+				</p:inputText>
+
+				<p:outputLabel value="Nombre:" />
+				<p:inputText value="#{bAdminUsuarios.usuarioOperacion.nombre}"
+					required="true" requiredMessage="El nombre es obligatorio" />
+
+				<p:outputLabel value="Apellido: " />
+				<p:inputText value="#{bAdminUsuarios.usuarioOperacion.apellido}"
+					required="true" requiredMessage="El apellido es obligatorio" />
+
+
+
+				<p:outputLabel value="Email" />
+				<p:inputText required="true" size="40"
+					requiredMessage="La dirección de email es obligatoria "
+					validatorMessage="La dirección de email no es correcta"
+					value="#{bAdminUsuarios.usuarioOperacion.email}">
+
+					<f:validateRegex
+						pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+
+				</p:inputText>
+
+				<p:separator rendered="#{!bAdminUsuarios.modificando}" />
+				<p:outputPanel rendered="#{!bAdminUsuarios.modificando}" />
+
+
+				<p:outputLabel value="Nombre de usuario:"
+					rendered="#{!bAdminUsuarios.modificando}" />
+				<p:inputText
+					value="#{bAdminUsuarios.usuarioOperacion.nombreUsuario}"
+					required="true"
+					requiredMessage="El nombre de usuario es obligatorio"
+					rendered="#{!bAdminUsuarios.modificando}" />
+
+				<p:outputLabel value="Password:"
+					rendered="#{!bAdminUsuarios.modificando}" />
+				<p:password value="#{bAdminUsuarios.usuarioOperacion.password}"
+					required="true" requiredMessage="El Password es obligatorio"
+					match="passConfirma" rendered="#{!bAdminUsuarios.modificando}" />
+
+				<p:outputLabel value="Confirme el Password:"
+					rendered="#{!bAdminUsuarios.modificando}" />
+				<p:password value="#{bAdminUsuarios.usuarioOperacion.password}"
+					id="passConfirma" required="true"
+					requiredMessage="El Password es obligatorio"
+					rendered="#{!bAdminUsuarios.modificando}" />
+
+
+				<p:separator />
+				<p:outputPanel />
+
+
+				<p:commandButton value="Registrar" ajax="#{ajaxValue}"
+					actionListener="#{bAdminUsuarios.btnCrearUsuario}"
+					rendered="#{!bAdminUsuarios.modificando}" />
+
+				<p:commandButton value="Modificar"
+					actionListener="#{bAdminUsuarios.btnModificarUsuario}"
+					rendered="#{bAdminUsuarios.modificando}" />
+
+			</p:panelGrid>
+		</h:form>
+
+	</ui:composition>
+</h:body>
+</html>

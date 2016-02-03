@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<ui:composition template="plantilla.xhtml">
+
+		<ui:define name="content">
+			<h:form id="frmUsuarios">
+
+				<p:panelGrid columns="2" styleClass="tabla">
+					<p:outputLabel value="Usuario: " />
+					<p:inputText value="#{bLoginUsuario.usuario.nombreUsuario}" />
+					<p:outputLabel value="Password:" />
+					<p:password value="#{bLoginUsuario.usuario.password}" />
+
+
+					<p:commandButton value="Aceptar" ajax="false"
+						action="#{bLoginUsuario.btnEntrarAlSistema}" />
+
+					<p:commandLink value="Recordar contraseña"
+						actionListener="#{bLoginUsuario.btnRecordarPassword}" />
+
+				</p:panelGrid>
+
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+
+</html>

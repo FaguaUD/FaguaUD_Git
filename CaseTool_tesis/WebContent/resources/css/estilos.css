@@ -1,0 +1,115 @@
+@CHARSET "ISO-8859-1";
+
+.error {
+	margin: 0 auto;
+	font-size: 12px !important;
+	font-family: sans-serif;
+	color: #DB3939;
+
+
+
+}
+
+.tablaPie{
+	
+	font-size:10px; 
+	text-align: center; 
+	margin: 0 auto;	
+}
+
+.tablaPie tr, .tablaPie td {
+	
+	border:none;
+}
+
+.tabla {
+	margin: 0 auto;
+	font-size: 12px !important;
+	font-family: sans-serif;
+}
+
+.tablaContenido {
+	margin: 0 auto;
+	font-size: 12px !important;
+	font-family: sans-serif;
+	width:100%;
+	
+}
+
+.tablaTitulo {
+	margin: 0 auto; 
+	font-size: 24px !important;
+	font-family: sans-serif;
+	width:100%;
+	text-align: center;
+}
+
+.tablaTitulo tr,.tablaTitulo td {
+	border: none;
+}
+
+
+.tablaContenido tr,.tablaContenido td {
+	border: none;
+}
+
+.dibujo tr, .dibujo td{
+	border:none !important;
+}
+
+.botones {
+	float: right;
+	font-size: 12px !important;
+	font-family: sans-serif;
+}
+
+.tabla tr,.tabla td {
+	border: none;
+}
+
+.menuSuperior tr,.menuSuperior td {
+	border: none;
+	vertical-align: top;
+}
+
+.menuSuperior {
+	
+	width:100%;
+	font-size: 10px !important;
+	font-family: sans-serif;
+}
+
+ul.ui-menu-child {
+    white-space: nowrap;
+    width: 200px !important;
+}
+
+.cerrar {
+	float: right !important;
+	font-size: 12px !important;
+	font-family: sans-serif;
+	
+}
+
+.cerrar a{
+	padding-right: 10px;
+	word-wrap: normal;
+	display: inline-block;
+		
+}
+
+.cerrar label{
+	padding-right: 10px;
+	word-wrap: normal;
+	display: inline-block;
+		
+}
+
+.cerrar .fondo {
+	background-image: none !important;
+	border: none !important;
+}
+
+.cerrar .ui-state-hover {
+	background-image: none !important;
+}

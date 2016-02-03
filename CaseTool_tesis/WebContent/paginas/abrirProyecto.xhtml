@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<ui:composition>
+
+
+		<h:form id="frmAbrirProyecto">
+
+			<f:metadata>
+				<f:event listener="#{bAdminProyecto.configurarVista}"
+					type="preRenderView" />
+			</f:metadata>
+
+			<p:messages autoUpdate="true" closable="true"
+				id="mensajeAbrirProyecto" />
+
+			<p:panelGrid columns="1" styleClass="tablaContenido">
+
+				<p:panelGrid columns="1">
+					<p:outputLabel value="Fecha Creación Inicio: " />
+					<p:calendar id="buttonIni"
+						value="#{bAdminProyecto.fechaInicioFiltro}" showOn="button"
+						readonlyInput="true" />
+
+
+					<p:outputLabel value="Fecha Creación Fin: " />
+					<p:calendar id="buttonFin" value="#{bAdminProyecto.fechaFinFiltro}"
+						showOn="button" readonlyInput="true" />
+
+				</p:panelGrid>
+
+				<p:commandButton value="Filtrar" update=":frmAbrirProyecto"
+					action="#{bAdminProyecto.btnFiltrarProyectos}" />
+
+				<p:dataTable var="proyecto"
+					selection="#{bAdminProyecto.proyectoOperacion}"
+					rowKey="#{proyecto.ideProyecto}" selectionMode="single"
+					value="#{bAdminProyecto.proyectosUsuario}" paginator="true"
+					rows="10">
+					<f:facet name="header"> Proyectos </f:facet>
+
+					<p:column headerText="Nombre">
+						<h:outputText value="#{proyecto.nombreProyecto}" />
+					</p:column>
+
+					<p:column headerText="Descripcion">
+						<h:outputText value="#{proyecto.descripcionProyecto}" />
+					</p:column>
+
+					<p:column headerText="Fecha Creación">
+						<h:outputText value="#{proyecto.fechaCreacion}" />
+					</p:column>
+
+				</p:dataTable>
+
+
+				<p:commandButton value="Abrir proyecto" ajax="false"
+					action="#{bAdminProyecto.btnAbrirProyecto}" />
+
+			</p:panelGrid>
+
+		</h:form>
+
+	</ui:composition>
+</h:body>
+</html>

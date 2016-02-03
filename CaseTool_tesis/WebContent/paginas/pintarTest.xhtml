@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+</h:head>
+<h:body>
+	<h:outputScript library="js" name="joint.min.js" target="head" />
+	<h:outputScript library="js" name="joint.shapes.uml.js" target="head" />
+	<h:outputScript library="js" name="joint.shapes.uml.min.js"
+		target="head" />
+	<h:outputStylesheet library="css" name="joint.min.css" />
+
+
+
+	<h:form id="frmPrueba">
+		<p:panelGrid styleClass="dibujo">
+			<p:row>
+				<p:column style="border:none; vertical-align:top">
+					<p:panelGrid style="font-size: 10px;">
+						<p:row>
+							<p:column colspan="2">
+								<h:inputHidden id="cubo" value="#{bAdminDibujo.cubo}" />
+								<p:outputLabel value="Nombre Cubo: #{bAdminDibujo.nombreCubo}" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<p:commandLink value="Regresar" action="inicio" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:selectOneMenu value="#{bAdminDibujo.lenguajeScript}">
+									<f:selectItems value="#{bAdminDibujo.lenguajes}" />
+								</h:selectOneMenu>
+							</p:column>
+							<p:column>
+								<p:commandButton value="Generar Script" ajax="false"
+									actionListener="#{bAdminDibujo.crearArchivo}">
+									<p:fileDownload value="#{bAdminDibujo.file}" />
+								</p:commandButton>
+							</p:column>
+
+						</p:row>
+					</p:panelGrid>
+				</p:column>
+				<p:column>
+					<div id="canvas"></div>
+				</p:column>
+			</p:row>
+		</p:panelGrid>
+
+	</h:form>
+
+
+	<script>
+		var centerX = Math.floor(window.innerWidth / 2);
+		var centerY = Math.floor(window.innerHeight / 2);
+
+		var cubo = document.getElementById("frmPrueba:cubo").value;
+		var arregloCubo = cubo.split('|');
+		var hecho = arregloCubo[0];
+		var arregloDim = arregloCubo[1].split(':');
+
+		var graph = new joint.dia.Graph;
+
+		var paper = new joint.dia.Paper({
+			el : $('#canvas'),
+			width : $(window).width(),
+			height : $(window).height(),
+			gridSize : 1,
+			model : graph
+		});
+
+		var uml = joint.shapes.uml;
+
+		var objetosCubo = [];
+		var objetosDim = [];
+		var objetosEnlaces = [];
+		var dimensionesAsAtributos = [];
+		var indiceYestrella = -150;
+		var indiceXestrella = -30;
+
+		_.each(arregloDim, function(c) {
+
+			var arregloAtr = c.split('(');
+			var atributos = [];
+			if (typeof arregloAtr[1] != 'undefined') {
+
+				var atributos = arregloAtr[1].replace(')', '').split(';');
+			}
+
+			if (typeof arregloAtr[0] != 'undefined') {
+				if (arregloAtr[0] != '') {
+					var dim1 = new uml.Class({
+						position : {
+							x : centerX + indiceXestrella,
+							y : centerY + indiceYestrella
+						},
+						size : {
+							width : 150,
+							height : 100
+						},
+						name : arregloAtr[0],
+						attributes : atributos,
+						methods : []
+					});
+					objetosDim.push(dim1);
+				}
+			}
+			dimensionesAsAtributos.push(arregloAtr[0]);
+			indiceXestrella = indiceXestrella - 200;
+
+		});
+
+		var hechoDibujo = new uml.Class({
+			position : {
+				x : centerX,
+				y : centerY
+			},
+			size : {
+				width : 150,
+				height : 50 * dimensionesAsAtributos.size
+			},
+			name : hecho,
+			attributes : dimensionesAsAtributos,
+			methods : []
+		});
+
+		objetosCubo.push(hechoDibujo);
+
+		_.each(objetosDim, function(d) {
+			var enlace = new joint.dia.Link({
+				source : {
+					id : d.id
+				},
+				target : {
+					id : hechoDibujo.id
+				}
+			})
+
+			objetosEnlaces.push(enlace);
+		});
+
+		_.each(objetosCubo, function(c) {
+			graph.addCell(c);
+		});
+
+		_.each(objetosDim, function(c) {
+			graph.addCell(c);
+		});
+
+		_.each(objetosEnlaces, function(c) {
+			graph.addCell(c);
+		});
+	</script>
+
+
+
+
+</h:body>
+</html>

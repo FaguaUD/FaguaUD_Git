@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<h:outputStylesheet library="css" name="estilos.css" />
+
+	<p:messages id="messages" showDetail="true" autoUpdate="true"
+		globalOnly="true" closable="true" />
+
+	<p:ajaxStatus onstart="PF('statusDialog').show()"
+		onsuccess="PF('statusDialog').hide()" />
+
+	<p:dialog widgetVar="statusDialog" modal="true" draggable="false"
+		closable="false" resizable="false" showHeader="false">
+		<h:graphicImage library="img" name="ajax-loading.gif" />
+	</p:dialog>
+
+
+	<div id="page">
+
+		<div id="header">
+			<ui:insert name="header">
+				<ui:include src="/paginas/menu.xhtml" />
+			</ui:insert>
+		</div>
+
+		<br /> <br /> <br />
+		<div id="content">
+			<ui:insert name="content">
+				<ui:include src="/template/common/commonContent.xhtml" />
+			</ui:insert>
+		</div>
+		<br /> <br /> <br />
+		<div id="footer">
+			<ui:insert name="footer">
+				<ui:include src="/paginas/piePagina.xhtml" />
+			</ui:insert>
+		</div>
+
+	</div>
+
+
+</h:body>
+</html>

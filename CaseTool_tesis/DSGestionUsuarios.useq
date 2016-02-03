@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.1.8" icons="true">  
+  <object id="1" language="java" name="co.edu.udistrital.caseTool.Entidades.CtUsuario" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtUsuario.java" binary="false" label="usuario" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="2">      
+      <position height="21" width="0" x="0" y="235"/>    
+    </execution>    
+    <execution id="3">      
+      <position height="63" width="156" x="165" y="118"/>    
+    </execution>  
+  </object>  
+  <object id="6" language="java" name="co.edu.udistrital.caseTool.ObjetosDeNegocio.LoginUsuarioWBO" 
+    project="CaseTool_tesis" file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/ObjetosDeNegocio/LoginUsuarioWBO.java" 
+    binary="false" label="loginUsuarioWBO" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="155" y="0"/>    
+    <execution id="7">      
+      <position height="220" width="193" x="165" y="120"/>    
+    </execution>    
+    <execution id="11">      
+      <position height="21" width="0" x="0" y="204"/>    
+    </execution>    
+    <execution id="14">      
+      <position height="21" width="0" x="0" y="298"/>    
+    </execution>    
+    <execution id="5">      
+      <position height="21" width="193" x="325" y="139"/>    
+    </execution>  
+  </object>  
+  <object id="15" language="java" name="co.edu.udistrital.caseTool.Persistencia.AdminUsuarios" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Persistencia/AdminUsuarios.java" binary="false" 
+    label="adminPersistencia" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="9">      
+      <position height="21" width="0" x="0" y="141"/>    
+    </execution>  
+  </object>  
+  <message id="4" operation="btnEntrarAlSistema():java.lang.String">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="5"/>  
+  </message>  
+  <message id="8" 
+    operation="verificarUsuario(co.edu.udistrital.caseTool.Entidades.CtUsuario):co.edu.udistrital.caseTool.Entidades.CtUsuario">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="9"/>  
+  </message>  
+  <message id="10" operation="ponerEnSesion(java.lang.String,java.lang.Object):void">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="11"/>  
+  </message>  
+  <message id="12" operation="getPrimerIngreso():boolean">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="2"/>  
+  </message>  
+  <message id="13" operation="escribirErrorPantalla(java.lang.String,java.lang.String,java.lang.String):void">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="14"/>  
+  </message>
+</sequence-diagram>

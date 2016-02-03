@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.1.8" icons="true">  
+  <object id="1" language="java" name="co.edu.udistrital.caseTool.Entidades.CtUsuario" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtUsuario.java" binary="false" label="ctUsuario" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="181" y="0"/>    
+    <execution id="2">      
+      <position height="471" width="156" x="5" y="78"/>    
+    </execution>    
+    <execution id="5">      
+      <position height="21" width="7" x="80" y="120"/>    
+    </execution>    
+    <execution id="6">      
+      <position height="21" width="7" x="80" y="151"/>    
+    </execution>    
+    <execution id="7">      
+      <position height="21" width="7" x="80" y="255"/>    
+    </execution>    
+    <execution id="8">      
+      <position height="21" width="7" x="80" y="287"/>    
+    </execution>    
+    <execution id="9">      
+      <position height="21" width="7" x="80" y="393"/>    
+    </execution>  
+  </object>  
+  <object id="10" language="java" name="co.edu.udistrital.caseTool.ObjetosDeNegocio.LoginUsuarioWBO" 
+    project="CaseTool_tesis" file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/ObjetosDeNegocio/LoginUsuarioWBO.java" 
+    binary="false" label="loginUsuarioWBO" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="397" y="0"/>    
+    <execution id="4">      
+      <position height="429" width="193" x="165" y="99"/>    
+    </execution>    
+    <execution id="24">      
+      <position height="21" width="0" x="0" y="315"/>    
+    </execution>    
+    <execution id="26">      
+      <position height="21" width="0" x="0" y="369"/>    
+    </execution>    
+    <execution id="29">      
+      <position height="21" width="0" x="0" y="428"/>    
+    </execution>    
+    <execution id="31">      
+      <position height="21" width="0" x="0" y="486"/>    
+    </execution>  
+  </object>  
+  <object id="32" language="java" name="co.edu.udistrital.caseTool.Persistencia.AdminUsuarios" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Persistencia/AdminUsuarios.java" binary="false" 
+    label="adminPersistencia" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="13">      
+      <position height="21" width="0" x="0" y="136"/>    
+    </execution>    
+    <execution id="16">      
+      <position height="21" width="0" x="0" y="182"/>    
+    </execution>  
+  </object>  
+  <object id="33" language="java" name="co.edu.udistrital.caseTool.GestiónEmail.AdministradorEmail" 
+    project="CaseTool_tesis" file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/GestiónEmail/AdministradorEmail.java" 
+    binary="false" label="adminEmail" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="18">      
+      <position height="21" width="0" x="0" y="213"/>    
+    </execution>    
+    <execution id="20">      
+      <position height="21" width="0" x="0" y="242"/>    
+    </execution>  
+  </object>  
+  <message id="3" operation="btnRecordarPassword():void">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="11" operation="getNombreUsuario():java.lang.String">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="5"/>  
+  </message>  
+  <message id="12" operation="validarSiExisteUsuario(java.lang.String):boolean">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="13"/>  
+  </message>  
+  <message id="14" operation="getNombreUsuario():java.lang.String">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="6"/>  
+  </message>  
+  <message id="15" 
+    operation="buscarUsuario(co.edu.udistrital.caseTool.Entidades.CtUsuario):java.util.List&lt;CtUsuario&gt;">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="16"/>  
+  </message>  
+  <message id="17" operation="AdministradorEmail()">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="18"/>  
+  </message>  
+  <message id="19" operation="enviarEmail(java.lang.String,java.lang.String,java.lang.String):void">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="20"/>  
+  </message>  
+  <message id="21" operation="getEmail():java.lang.String">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="22" operation="getPassword():java.lang.String">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="8"/>  
+  </message>  
+  <message id="23" operation="escribirInfoPantalla(java.lang.String,java.lang.String,java.lang.String):void">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="24"/>  
+  </message>  
+  <message id="25" operation="escribirErrorPantalla(java.lang.String,java.lang.String,java.lang.String):void">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="26"/>  
+  </message>  
+  <message id="27" operation="getNombreUsuario():java.lang.String">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="9"/>  
+  </message>  
+  <message id="28" operation="escribirErrorPantalla(java.lang.String,java.lang.String,java.lang.String):void">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="29"/>  
+  </message>  
+  <message id="30" operation="escribirErrorPantalla(java.lang.String,java.lang.String,java.lang.String):void">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="31"/>  
+  </message>
+</sequence-diagram>

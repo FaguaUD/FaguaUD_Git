@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.1.8" icons="true">  
+  <object id="1" language="java" name="co.edu.udistrital.caseTool.Entidades.CtUsuario" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtUsuario.java" binary="false" label="ctUsuario" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="178" y="0"/>    
+    <execution id="2">      
+      <position height="144" width="156" x="5" y="78"/>    
+    </execution>    
+    <execution id="5">      
+      <position height="267" width="156" x="5" y="229"/>    
+    </execution>  
+  </object>  
+  <object id="8" language="java" name="co.edu.udistrital.caseTool.ObjetosDeNegocio.AdministrarFormulariosWBO" 
+    project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/ObjetosDeNegocio/AdministrarFormulariosWBO.java" binary="false" 
+    label="administrarFormulariosWBO" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="263" y="0"/>    
+    <execution id="4">      
+      <position height="102" width="193" x="165" y="99"/>    
+    </execution>    
+    <execution id="12">      
+      <position height="21" width="0" x="0" y="159"/>    
+    </execution>    
+    <execution id="7">      
+      <position height="225" width="193" x="165" y="250"/>    
+    </execution>    
+    <execution id="20">      
+      <position height="21" width="0" x="0" y="433"/>    
+    </execution>  
+  </object>  
+  <object id="21" language="java" name="co.edu.udistrital.caseTool.Entidades.CtFormulario" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtFormulario.java" binary="false" 
+    label="formularioOperacion" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="14">      
+      <position height="21" width="0" x="0" y="265"/>    
+    </execution>    
+    <execution id="16">      
+      <position height="21" width="0" x="0" y="309"/>    
+    </execution>    
+    <execution id="18">      
+      <position height="21" width="0" x="0" y="359"/>    
+    </execution>  
+  </object>  
+  <object id="22" language="java" name="co.edu.udistrital.caseTool.Entidades.CtPreguntas" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtPreguntas.java" binary="false" 
+    label="preguntaNueva" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="10">      
+      <position height="21" width="0" x="0" y="115"/>    
+    </execution>  
+  </object>  
+  <message id="3" operation="preparaNuevaPregunta():void">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="6" operation="btnGuardarPregunta():void">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="9" operation="CtPreguntas()">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="10"/>  
+  </message>  
+  <message id="11" operation="setCreandoNuevaPregunta(boolean):void">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="12"/>  
+  </message>  
+  <message id="13" operation="getPreguntasFormulario():java.util.List&lt;CtPreguntas&gt;">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="14"/>  
+  </message>  
+  <message id="15" 
+    operation="setPreguntasFormulario(java.util.List&lt;co.edu.udistrital.caseTool.Entidades.CtPreguntas&gt;):void">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="16"/>  
+  </message>  
+  <message id="17" operation="adicionarPregunta(co.edu.udistrital.caseTool.Entidades.CtPreguntas):void">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="18"/>  
+  </message>  
+  <message id="19" operation="escribirErrorPantalla(java.lang.String,java.lang.String,java.lang.String):void">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="20"/>  
+  </message>
+</sequence-diagram>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<ui:composition template="plantilla.xhtml">
+
+		<ui:define name="content">
+
+			<p:panelGrid styleClass="tablaTitulo">
+				<p:row>
+					<p:column>
+						<p:panelGrid columns="1"
+							style="font-weight: bold; color:black; margin:0 auto">
+							<p:outputLabel value="Fagua-UD"></p:outputLabel>
+							<p:outputLabel value="Herramienta Case"></p:outputLabel>
+							<p:outputLabel
+								value="Requerimientos en el desarrollo de un proyecto de Data Mart"></p:outputLabel>
+						</p:panelGrid>
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:graphicImage library="img" name="escudo1.png" width="150"
+							height="200" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<p:panelGrid columns="1"
+							style="font-size: 12px; color:black; margin:0 auto">
+							<p:outputLabel value="Version 1.1" />
+							<br />
+							<p:outputLabel
+								value="Este trabajo de grado fue desarrollado por:"
+								style="font-weight: bold;" />
+							<p:outputLabel value="John Granados" />
+							<p:outputLabel value="Edwin Roncancio" />
+							<br />
+							<p:outputLabel
+								value="Con la dirección interna de la Docente e Ingeniera:"
+								style="font-weight: bold;" />
+							<p:outputLabel value="Sonia Ordonez Salinas" />
+							<br />
+							<p:outputLabel value="Correo de contacto"
+								style="font-weight: bold;" />
+							<p:outputLabel value="casetooltesis@gmail.com" />
+						</p:panelGrid>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+		</ui:define>
+	</ui:composition>
+</h:body>
+
+</html>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<ui:composition>
+
+
+		<h:form id="frmAdminOtros">
+
+			<f:metadata>
+				<f:event listener="#{bAdminSolicitudes.configurarVista}"
+					type="preRenderView" />
+			</f:metadata>
+
+			<p:messages id="msgSolicitudes" showDetail="true" autoUpdate="true"
+				closable="true" />
+
+			<p:panelGrid columns="2" styleClass="tabla">
+
+				<p:outputLabel value="Nombre:" />
+				<p:inputText value="#{bAdminSolicitudes.usuarioFiltro.nombre}" />
+
+				<p:outputLabel value="Apellido:" />
+				<p:inputText value="#{bAdminSolicitudes.usuarioFiltro.apellido}" />
+
+				<p:outputLabel value="Código:" />
+				<p:inputText value="#{bAdminSolicitudes.usuarioFiltro.codigo}" />
+
+				<p:commandButton value="Buscar"
+					actionListener="#{bAdminSolicitudes.btnBuscarUsuario}"
+					update="tablaResultados" />
+
+			</p:panelGrid>
+
+			<p:panelGrid columns="1" styleClass="tabla" id="tablaResultados">
+
+				<p:commandButton value="Crear nuevo usuario"
+					actionListener="#{bAdminSolicitudes.btnNuevoUsuarioProyecto}"
+					oncomplete="PF('adminUsuarios').show();" />
+
+				<p:dataTable var="usuario"
+					value="#{bAdminSolicitudes.usuariosSolicitudes}" rows="10"
+					emptyMessage="No hay Solicitudes pendientes" paginator="true">
+
+					<p:column headerText="Nombre" width="6%"
+						style="text-align: center;">
+						<h:outputText value="#{usuario.nombre} #{usuario.apellido}" />
+					</p:column>
+
+					<p:column headerText="Código" width="6%"
+						style="text-align: center;">
+						<h:outputText value="#{usuario.ideUsuario}" />
+					</p:column>
+
+					<p:column headerText="Email" width="6%" style="text-align: center;">
+						<h:outputText value="#{usuario.email}" />
+					</p:column>
+
+					<p:column headerText="Rol" width="6%" style="text-align: center;">
+						<h:outputText value="#{usuario.ctRol.descripcionRol}" />
+					</p:column>
+
+					<p:column headerText="Estado" width="6%"
+						style="text-align: center;">
+						<h:outputText value="#{usuario.estado}" />
+					</p:column>
+
+					<p:column headerText="Opciones" width="6%"
+						style="text-align: center;">
+
+
+						<p:commandButton icon="ui-icon-pencil" title="Modificar usuario"
+							actionListener="#{bAdminSolicitudes.btnModificarUsuario(usuario)}"
+							update=":frmAdminOtros" oncomplete="PF('adminUsuarios').show();" />
+
+
+						<p:commandButton icon="ui-icon-trash" title="Eliminar usuario"
+							actionListener="#{bAdminSolicitudes.btnEliminarUsuario(usuario)}"
+							update=":frmAdminOtros" rendered="false" />
+
+
+					</p:column>
+
+				</p:dataTable>
+			</p:panelGrid>
+
+
+		</h:form>
+
+	</ui:composition>
+</h:body>
+</html>

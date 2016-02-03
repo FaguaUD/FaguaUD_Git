@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.1.8" icons="true">  
+  <object id="1" language="java" name="co.edu.udistrital.caseTool.Entidades.CtUsuario" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtUsuario.java" binary="false" label="ctUsuario" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="87" y="0"/>    
+    <execution id="2">      
+      <position height="217" width="156" x="5" y="78"/>    
+    </execution>    
+    <execution id="5">      
+      <position height="335" width="156" x="5" y="308"/>    
+    </execution>    
+    <execution id="8">      
+      <position height="21" width="7" x="80" y="562"/>    
+    </execution>  
+  </object>  
+  <object id="9" language="java" name="co.edu.udistrital.caseTool.ObjetosDeNegocio.IngresoUsuarioWBO" 
+    project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/ObjetosDeNegocio/IngresoUsuarioWBO.java" binary="false" 
+    label="ingresoUsuarioWBO" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="235" y="0"/>    
+    <execution id="4">      
+      <position height="175" width="193" x="165" y="99"/>    
+    </execution>    
+    <execution id="17">      
+      <position height="21" width="0" x="0" y="232"/>    
+    </execution>    
+    <execution id="7">      
+      <position height="293" width="193" x="165" y="329"/>    
+    </execution>    
+    <execution id="21">      
+      <position height="21" width="0" x="0" y="419"/>    
+    </execution>    
+    <execution id="25">      
+      <position height="21" width="0" x="0" y="521"/>    
+    </execution>  
+  </object>  
+  <object id="29" language="java" name="co.edu.udistrital.caseTool.Entidades.CtDimension" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtDimension.java" binary="false" 
+    label="dimensionNueva" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="11">      
+      <position height="21" width="0" x="0" y="107"/>    
+    </execution>    
+    <execution id="19">      
+      <position height="21" width="0" x="0" y="350"/>    
+    </execution>    
+    <execution id="23">      
+      <position height="21" width="0" x="0" y="459"/>    
+    </execution>  
+  </object>  
+  <object id="30" language="java" name="co.edu.udistrital.caseTool.Entidades.CtCubo" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtCubo.java" binary="false" label="cuboOperacion" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="13">      
+      <position height="21" width="0" x="0" y="149"/>    
+    </execution>    
+    <execution id="15">      
+      <position height="21" width="0" x="0" y="180"/>    
+    </execution>    
+    <execution id="28">      
+      <position height="21" width="0" x="0" y="580"/>    
+    </execution>  
+  </object>  
+  <message id="3" operation="preparaCrearDimension():void">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="6" operation="guardarDimension():void">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="10" operation="CtDimension()">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="11"/>  
+  </message>  
+  <message id="12" operation="getDimensiones():java.util.List&lt;CtDimension&gt;">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="13"/>  
+  </message>  
+  <message id="14" 
+    operation="setDimensiones(java.util.List&lt;co.edu.udistrital.caseTool.Entidades.CtDimension&gt;):void">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="15"/>  
+  </message>  
+  <message id="16" operation="setCrearDimension(boolean):void">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="17"/>  
+  </message>  
+  <message id="18" operation="getRespuestas():java.util.List&lt;CtRespuesta&gt;">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="19"/>  
+  </message>  
+  <message id="20" operation="escribirErrorPantalla(java.lang.String,java.lang.String,java.lang.String):void">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="21"/>  
+  </message>  
+  <message id="22" operation="setUsuarioCreacion(java.lang.Long):void">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="23"/>  
+  </message>  
+  <message id="24" operation="getUsuarioLogueado():co.edu.udistrital.caseTool.Entidades.CtUsuario">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="25"/>  
+  </message>  
+  <message id="26" operation="getIdeUsuario():java.lang.Long">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="8"/>  
+  </message>  
+  <message id="27" operation="adicionarDimension(co.edu.udistrital.caseTool.Entidades.CtDimension):void">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="28"/>  
+  </message>
+</sequence-diagram>

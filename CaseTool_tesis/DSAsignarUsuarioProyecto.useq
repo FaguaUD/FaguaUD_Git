@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.1.8" icons="true">  
+  <object id="1" language="java" name="co.edu.udistrital.caseTool.Entidades.CtUsuario" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtUsuario.java" binary="false" label="ctUsuario" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="50" y="0"/>    
+    <execution id="2">      
+      <position height="126" width="156" x="5" y="78"/>    
+    </execution>  
+  </object>  
+  <object id="5" language="java" name="co.edu.udistrital.caseTool.ObjetosDeNegocio.AdministrarProyectosWBO" 
+    project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/ObjetosDeNegocio/AdministrarProyectosWBO.java" binary="false" 
+    label="administrarProyectosWBO" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="279" y="0"/>    
+    <execution id="4">      
+      <position height="84" width="193" x="165" y="99"/>    
+    </execution>    
+    <execution id="7">      
+      <position height="21" width="0" x="0" y="141"/>    
+    </execution>  
+  </object>  
+  <message id="3" operation="btnAbrirProyecto():java.lang.String">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="6" operation="ponerEnSesion(java.lang.String,java.lang.Object):void">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>
+</sequence-diagram>

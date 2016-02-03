@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<ui:composition>
+
+
+		<h:form id="frmCrearFormulario">
+
+			<f:metadata>
+				<f:event listener="#{bAdminFormularios.configurarVista}"
+					type="preRenderView" />
+			</f:metadata>
+
+			<p:messages autoUpdate="true" closable="true" />
+
+			<p:panelGrid columns="1" styleClass="tablaContenido">
+				<p:commandButton title="Crear Formulario Nuevo"
+					icon="ui-icon-plusthick" update="frmCrearFormulario"
+					action="#{bAdminFormularios.btnNuevoFormulario}" />
+			</p:panelGrid>
+
+			<h:panelGroup
+				rendered="#{!bAdminFormularios.creandoNuevoFormulario and !bAdminFormularios.modificando}"
+				id="pnlBuscarFormulario">
+				<p:panelGrid columns="2" styleClass="tablaContenido">
+
+					<p:outputLabel value="Nombre formulario:">
+						<p:inputText
+							value="#{bAdminFormularios.formularioOperacion.nombreFormulario}" />
+					</p:outputLabel>
+
+					<p:commandButton value="Buscar formulario"
+						update="frmCrearFormulario"
+						action="#{bAdminFormularios.btnBuscarFormulario}" />
+
+				</p:panelGrid>
+
+				<h:panelGroup id="pnlFormularioExistentes"
+					rendered="#{bAdminFormularios.mostrandoFormularios}">
+					<p:panelGrid columns="1" styleClass="tablaContenido">
+
+						<p:dataTable var="formulario"
+							value="#{bAdminFormularios.formulariosBusqueda}"
+							selection="#{bAdminFormularios.formularioOperacion}"
+							rowKey="#{formulario.idFormulario}" selectionMode="single">
+
+							<f:facet name="header"> Formularios </f:facet>
+
+							<p:column headerText="Nombre">
+								<h:outputText value="#{formulario.nombreFormulario}" />
+							</p:column>
+
+							<p:column headerText="Descripción">
+								<h:outputText value="#{formulario.descripcionFormulario}" />
+							</p:column>
+
+							<p:column headerText="Fecha Creación">
+								<h:outputText value="#{formulario.fechaCreacion}" />
+							</p:column>
+
+						</p:dataTable>
+
+						<p:commandButton value="Asignar formulario" ajax="false"
+							action="#{bAdminFormularios.btnAsignarFormulario}" />
+					</p:panelGrid>
+				</h:panelGroup>
+
+			</h:panelGroup>
+
+			<h:panelGroup
+				rendered="#{bAdminFormularios.creandoNuevoFormulario or bAdminFormularios.modificando}"
+				id="pnlNuevoFormulario">
+				<p:panelGrid styleClass="tablaContenido">
+					<p:row>
+						<p:column>
+							<p:outputLabel value="Nombre formulario:" />
+						</p:column>
+						<p:column>
+							<p:inputText
+								value="#{bAdminFormularios.formularioOperacion.nombreFormulario}"
+								required="true" requiredMessage="El nombre es obligatorio" />
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>
+							<p:outputLabel value="Usuario Formulario:" />
+						</p:column>
+						<p:column>
+							<p:inputText
+								value="#{bAdminFormularios.usuarioLogueado.nombreCompleto}"
+								disabled="true" />
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>
+							<p:outputLabel value="Fecha creación:" />
+						</p:column>
+						<p:column>
+							<p:inputText
+								value="#{bAdminFormularios.formularioOperacion.fechaCreacion}"
+								disabled="true">
+								<f:convertDateTime pattern="yyyy-MM-dd HH:mm" />
+							</p:inputText>
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>
+							<p:outputLabel value="Fecha de finalización estimada:" />
+						</p:column>
+						<p:column>
+							<p:calendar
+								value="#{bAdminFormularios.formularioOperacion.fechaFinEstimada}"
+								showOn="button" />
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>
+							<p:outputLabel value="Descripción: " />
+						</p:column>
+						<p:column>
+							<p:inputTextarea
+								value="#{bAdminFormularios.formularioOperacion.descripcionFormulario}"
+								required="true" requiredMessage="La descripción es obligatoria" />
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column colspan="2">
+							<h:panelGroup id="pnlGrPreguntas">
+								<p:dataTable var="pregunta" id="dtPreguntas"
+									value="#{bAdminFormularios.formularioOperacion.preguntasFormulario}">
+									<p:column headerText="Enunciado">
+										<p:outputLabel value="#{pregunta.enunciado}" />
+									</p:column>
+									<p:column headerText="Tipo pregunta">
+										<p:outputLabel value="#{pregunta.tipo}" />
+									</p:column>
+									<p:column headerText="Opciones respuesta">
+										<p:dataList value="#{pregunta.opciones}" var="opcion">
+											<p:outputLabel value="#{opcion.enunciadoOpcion}" />
+										</p:dataList>
+									</p:column>
+									<p:column>
+										<p:commandButton title="Eliminar pregunta"
+											icon="ui-icon-minusthick"
+											update=":frmCrearFormulario:pnlGrPreguntas"
+											actionListener="#{bAdminFormularios.eliminarPregunta(pregunta)}" />
+									</p:column>
+								</p:dataTable>
+							</h:panelGroup>
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column colspan="2">
+							<p:commandButton value="Agregar Pregunta"
+								actionListener="#{bAdminFormularios.preparaNuevaPregunta}"
+								update="frmCrearFormulario" />
+						</p:column>
+					</p:row>
+				</p:panelGrid>
+
+				<h:panelGroup rendered="#{bAdminFormularios.creandoNuevaPregunta}">
+					<p:panelGrid styleClass="tablaContenido">
+
+						<p:row>
+							<p:column>
+								<p:outputLabel value="Enunciado:" />
+							</p:column>
+							<p:column>
+								<p:inputText
+									value="#{bAdminFormularios.preguntaNueva.enunciado}" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:outputLabel value="Tipo: " />
+							</p:column>
+							<p:column>
+								<p:selectOneMenu value="#{bAdminFormularios.preguntaNueva.tipo}">
+									<f:selectItems value="#{bAdminFormularios.tiposPregunta}" />
+								</p:selectOneMenu>
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<h:panelGroup id="pnlGrOpciones">
+									<p:dataTable var="opcion"
+										value="#{bAdminFormularios.preguntaNueva.opciones}">
+										<p:column headerText="Opción">
+											<p:outputLabel value="#{opcion.enunciadoOpcion}" />
+										</p:column>
+										<p:column>
+											<p:commandButton title="Eliminar opción"
+												icon="ui-icon-minusthick"
+												update=":frmCrearFormulario:pnlGrOpciones"
+												actionListener="#{bAdminFormularios.eliminarOpcion(opcion)}" />
+										</p:column>
+
+									</p:dataTable>
+								</h:panelGroup>
+
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:commandButton value="Agregar Opción"
+									actionListener="#{bAdminFormularios.preparaNuevaOpcion}"
+									update="frmCrearFormulario" />
+							</p:column>
+							<p:column>
+								<p:commandButton value="Guardar Pregunta"
+									actionListener="#{bAdminFormularios.btnGuardarPregunta}"
+									update="frmCrearFormulario" />
+							</p:column>
+						</p:row>
+					</p:panelGrid>
+				</h:panelGroup>
+
+
+				<h:panelGroup rendered="#{bAdminFormularios.creandoNuevaOpcion}">
+					<p:panelGrid columns="2" styleClass="tablaContenido">
+						<p:outputLabel value="Enunciado Opción:">
+							<p:inputText
+								value="#{bAdminFormularios.opcionNueva.enunciadoOpcion}" />
+						</p:outputLabel>
+						<p:commandButton value="Guardar" update="frmCrearFormulario"
+							actionListener="#{bAdminFormularios.adicionarOpcion}" />
+					</p:panelGrid>
+
+				</h:panelGroup>
+
+
+
+				<p:panelGrid columns="1" styleClass="tablaContenido">
+
+					<p:commandButton value="Crear formulario" ajax="false"
+						action="#{bAdminFormularios.btnCrearFormulario}"
+						rendered="#{!bAdminFormularios.modificando}" />
+
+					<p:commandButton value="Modificar formulario" ajax="false"
+						action="#{bAdminFormularios.btnModificarFormulario}"
+						rendered="#{bAdminFormularios.modificando}" />
+
+				</p:panelGrid>
+
+			</h:panelGroup>
+
+		</h:form>
+
+	</ui:composition>
+</h:body>
+</html>

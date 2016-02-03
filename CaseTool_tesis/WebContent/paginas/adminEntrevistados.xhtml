@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<ui:composition>
+
+
+		<h:form id="frmAdminEntrevistado">
+
+			<f:metadata>
+				<f:event listener="#{bAdminEntrevistados.configurarVista}"
+					type="preRenderView" />
+			</f:metadata>
+
+			<p:messages autoUpdate="true" closable="true"
+				id="mensajesEntrevistado" />
+
+			<p:panelGrid styleClass="tablaContenido">
+
+				<p:row>
+					<p:column>
+						<p:outputLabel value="Nombre Entrevistado:" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{bAdminEntrevistados.entrevistado.nombre}"
+							required="true" requiredMessage="El nombre es obligatorio" />
+					</p:column>
+				</p:row>
+
+				<p:row>
+					<p:column>
+						<p:outputLabel value="Cargo:" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{bAdminEntrevistados.entrevistado.cargo}"
+							required="true" requiredMessage="El cargo es obligatorio" />
+					</p:column>
+				</p:row>
+
+				<p:row>
+					<p:column>
+						<p:outputLabel value="Area:" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{bAdminEntrevistados.entrevistado.area}"
+							required="true" requiredMessage="El área es obligatorio" />
+					</p:column>
+				</p:row>
+
+				<p:row>
+					<p:column>
+						<p:outputLabel value="Nivel Jerárquico:" />
+					</p:column>
+					<p:column>
+						<p:selectOneMenu
+							value="#{bAdminEntrevistados.entrevistado.nivelJerarquico}">
+							<f:selectItems value="#{bAdminEntrevistados.jerarquias}" />
+						</p:selectOneMenu>
+
+					</p:column>
+				</p:row>
+
+				<p:row>
+					<p:column colspan="2">
+						<p:commandButton value="Crear Entrevistado" ajax="true"
+							update="tablaResultados"
+							action="#{bAdminEntrevistados.btnCrearEntrevistado}"
+							rendered="#{!bAdminEntrevistados.modificando}" />
+					</p:column>
+					<p:column colspan="2">
+						<p:commandButton value="Modificar Entrevistado" ajax="true"
+							update="tablaResultados"
+							action="#{bAdminEntrevistados.btnModificarEntrevistado}"
+							rendered="#{bAdminEntrevistados.modificando}" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid columns="1" styleClass="tabla" id="tablaResultados">
+
+				<p:dataTable var="entrevistado"
+					value="#{bAdminEntrevistados.entrevistados}" rows="10"
+					emptyMessage="No hay Entrevistados" paginator="true"
+					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+					paginatorPosition="bottom" rowsPerPageTemplate="5,10,15">
+
+					<p:column headerText="Nombre" width="6%"
+						style="text-align: center;">
+						<h:outputText value="#{entrevistado.nombre}" />
+					</p:column>
+
+					<p:column headerText="Área" width="6%" style="text-align: center;">
+						<h:outputText value="#{entrevistado.area}" />
+					</p:column>
+
+					<p:column headerText="Cargo" width="6%" style="text-align: center;">
+						<h:outputText value="#{entrevistado.cargo}" />
+					</p:column>
+
+					<p:column headerText="Nivel Jerarquico" width="6%"
+						style="text-align: center;">
+						<h:outputText value="#{entrevistado.nivelJerarquico}" />
+					</p:column>
+
+					<p:column headerText="Opciones" width="6%"
+						style="text-align: center;">
+						<p:commandButton icon="ui-icon-trash" title="Eliminar usuario"
+							actionListener="#{bAdminEntrevistados.btnEliminarEntrevistado(entrevistado)}"
+							update=":frmAdminEntrevistado" rendered="false" />
+						<p:commandButton icon="ui-icon-pencil" title="Modificar usuario"
+							actionListener="#{bAdminEntrevistados.btnPreparaModificarEntrevistado(entrevistado)}"
+							update=":frmAdminEntrevistado" />
+					</p:column>
+
+				</p:dataTable>
+			</p:panelGrid>
+
+		</h:form>
+
+	</ui:composition>
+</h:body>
+</html>

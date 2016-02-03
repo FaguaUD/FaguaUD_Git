@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.1.8" icons="true">  
+  <object id="1" language="java" name="co.edu.udistrital.caseTool.Entidades.CtUsuario" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtUsuario.java" binary="false" label="ctUsuario" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="143" y="0"/>    
+    <execution id="2">      
+      <position height="254" width="156" x="5" y="78"/>    
+    </execution>  
+  </object>  
+  <object id="5" language="java" name="co.edu.udistrital.caseTool.ObjetosDeNegocio.IngresoUsuarioWBO" 
+    project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/ObjetosDeNegocio/IngresoUsuarioWBO.java" binary="false" 
+    label="ingresoUsuarioWBO" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="293" y="0"/>    
+    <execution id="4">      
+      <position height="212" width="193" x="165" y="99"/>    
+    </execution>    
+    <execution id="15">      
+      <position height="21" width="0" x="0" y="269"/>    
+    </execution>  
+  </object>  
+  <object id="16" language="java" name="co.edu.udistrital.caseTool.Entidades.CtProyecto" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtProyecto.java" binary="false" 
+    label="proyectoActual" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="7">      
+      <position height="21" width="0" x="0" y="115"/>    
+    </execution>  
+  </object>  
+  <object id="17" language="java" name="co.edu.udistrital.caseTool.TransferObject.NodoArbol" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/TransferObject/NodoArbol.java" binary="false" 
+    label="formularioEliminar" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="9">      
+      <position height="21" width="0" x="0" y="147"/>    
+    </execution>  
+  </object>  
+  <object id="18" language="java" name="co.edu.udistrital.caseTool.Entidades.CtFormulario" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtFormulario.java" binary="false" type="class" 
+    autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="11">      
+      <position height="21" width="0" x="0" y="180"/>    
+    </execution>  
+  </object>  
+  <object id="19" language="java" name="co.edu.udistrital.caseTool.Persistencia.AdminProyectos" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Persistencia/AdminProyectos.java" binary="false" 
+    label="adminPersistenciaProyectos" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="13">      
+      <position height="76" width="0" x="0" y="214"/>    
+    </execution>    
+    <execution id="21">      
+      <position height="21" width="0" x="0" y="248"/>    
+    </execution>  
+  </object>  
+  <message id="3" operation="eliminarFormulario():void">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="6" operation="removeFormularioXId(java.lang.Long):void">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="8" operation="getFormulario():co.edu.udistrital.caseTool.Entidades.CtFormulario">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="9"/>  
+  </message>  
+  <message id="10" operation="getIdFormulario():java.lang.Long">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="11"/>  
+  </message>  
+  <message id="12" operation="modificarProyecto(co.edu.udistrital.caseTool.Entidades.CtProyecto):void">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="13"/>  
+  </message>  
+  <message id="14" operation="ponerEnSesion(java.lang.String,java.lang.Object):void">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="15"/>  
+  </message>  
+  <message id="20" operation="actualizar(Entidad):void">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="21"/>  
+  </message>
+</sequence-diagram>

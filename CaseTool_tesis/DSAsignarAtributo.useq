@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.1.8" icons="true">  
+  <object id="1" language="java" name="co.edu.udistrital.caseTool.Entidades.CtUsuario" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtUsuario.java" binary="false" label="ctUsuario" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="161" y="0"/>    
+    <execution id="2">      
+      <position height="208" width="156" x="5" y="78"/>    
+    </execution>    
+    <execution id="5">      
+      <position height="230" width="156" x="5" y="296"/>    
+    </execution>  
+  </object>  
+  <object id="8" language="java" name="co.edu.udistrital.caseTool.ObjetosDeNegocio.IngresoUsuarioWBO" 
+    project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/ObjetosDeNegocio/IngresoUsuarioWBO.java" binary="false" 
+    label="ingresoUsuarioWBO" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="284" y="0"/>    
+    <execution id="4">      
+      <position height="166" width="193" x="165" y="99"/>    
+    </execution>    
+    <execution id="16">      
+      <position height="21" width="0" x="0" y="223"/>    
+    </execution>    
+    <execution id="7">      
+      <position height="188" width="193" x="165" y="317"/>    
+    </execution>    
+    <execution id="22">      
+      <position height="21" width="0" x="0" y="425"/>    
+    </execution>  
+  </object>  
+  <object id="25" language="java" name="co.edu.udistrital.caseTool.Entidades.CtAtributos" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtAtributos.java" binary="false" 
+    label="atributoNuevo" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="10">      
+      <position height="21" width="0" x="0" y="113"/>    
+    </execution>    
+    <execution id="18">      
+      <position height="21" width="0" x="0" y="324"/>    
+    </execution>    
+    <execution id="20">      
+      <position height="21" width="0" x="0" y="360"/>    
+    </execution>  
+  </object>  
+  <object id="26" language="java" name="co.edu.udistrital.caseTool.Entidades.CtDimension" project="CaseTool_tesis" 
+    file="/CaseTool_tesis/src/co/edu/udistrital/caseTool/Entidades/CtDimension.java" binary="false" 
+    label="dimensionNueva" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="12">      
+      <position height="21" width="0" x="0" y="141"/>    
+    </execution>    
+    <execution id="14">      
+      <position height="21" width="0" x="0" y="176"/>    
+    </execution>    
+    <execution id="24">      
+      <position height="21" width="0" x="0" y="463"/>    
+    </execution>  
+  </object>  
+  <message id="3" operation="preparaCrearAtributo():void">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="6" operation="guardarAtributo():void">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="9" operation="CtAtributos()">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="10"/>  
+  </message>  
+  <message id="11" operation="getAtributos():java.util.List&lt;CtAtributos&gt;">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="12"/>  
+  </message>  
+  <message id="13" operation="setAtributos(java.util.List&lt;co.edu.udistrital.caseTool.Entidades.CtAtributos&gt;):void">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="14"/>  
+  </message>  
+  <message id="15" operation="setCrearAtributo(boolean):void">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="16"/>  
+  </message>  
+  <message id="17" operation="getRespuestas():java.util.List&lt;CtRespuesta&gt;">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="18"/>  
+  </message>  
+  <message id="19" operation="getRespuestas():java.util.List&lt;CtRespuesta&gt;">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="20"/>  
+  </message>  
+  <message id="21" operation="escribirErrorPantalla(java.lang.String,java.lang.String,java.lang.String):void">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="22"/>  
+  </message>  
+  <message id="23" operation="adicionarAtributo(co.edu.udistrital.caseTool.Entidades.CtAtributos):void">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="24"/>  
+  </message>
+</sequence-diagram>

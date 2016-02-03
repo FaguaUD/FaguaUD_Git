@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<body>
+	<ui:composition>
+
+		<h:form id="frmMenu">
+
+			<f:metadata>
+				<f:event listener="#{bMenu.configurarVista}"
+					type="preRenderView" />
+			</f:metadata>	
+
+			<p:panelGrid columns="4" styleClass="menuSuperior">
+				<p:menubar rendered="#{!bMenu.sinUsuario}">
+					<p:submenu label="Archivo" icon="ui-icon-script"
+						rendered="#{!bMenu.sinUsuario}">
+
+						<p:menuitem value="Abrir Proyecto" icon="ui-icon-folder-open"
+							onclick="PF('enConstruccion').show();" />
+
+						<p:menuitem value="Nuevo Proyecto" icon="ui-icon-document"
+							onclick="PF('enConstruccion').show();" />
+
+						<p:menuitem value="Cerrar Proyectos" icon="ui-icon-arrowthick-1-s"
+							onclick="PF('enConstruccion').show();" />
+
+					</p:submenu>
+
+					<p:submenu label="Proyecto" icon="ui-icon-newwin"
+						rendered="#{!bMenu.sinUsuario}">
+
+						<p:menuitem value="Propiedades" icon="ui-icon-clipboard"
+							onclick="PF('enConstruccion').show();" />
+
+						<p:menuitem value="Guardar" icon="ui-icon-disk"
+							onclick="PF('enConstruccion').show();" />
+
+						<p:menuitem value="Guardar Como" icon="ui-icon-disk"
+							onclick="PF('enConstruccion').show();" />
+
+						<p:menuitem value="Cerrar Proyecto" icon="ui-icon-arrowthick-1-s"
+							onclick="PF('enConstruccion').show();" />
+
+					</p:submenu>
+
+					<p:submenu label="Herramientas" icon="ui-icon-wrench"
+						rendered="#{!bMenu.sinUsuario}">
+
+						<p:menuitem value="Estudio de viabilidad" icon="ui-icon-note"
+							onclick="PF('enConstruccion').show();" />
+
+						<p:menuitem value="Obtención de requerimientos"
+							icon="ui-icon-flag " onclick="PF('enConstruccion').show();" />
+
+						<p:menuitem value="Análisis de requerimientos"
+							icon="ui-icon-zoomin" onclick="PF('enConstruccion').show();" />
+
+						<p:menuitem value="Modelo DataMart" icon="ui-icon-gear"
+							onclick="PF('enConstruccion').show();" />
+
+					</p:submenu>
+
+					<p:submenu label="Ayuda" icon="ui-icon-help"
+						rendered="#{!bMenu.sinUsuario}">
+
+						<p:menuitem value="Manual de usuario" icon="ui-icon-note"
+							onclick="PF('enConstruccion').show();" />
+
+						<p:menuitem value="Acerca de " icon="ui-icon-person"
+							onclick="PF('enConstruccion').show();" />
+
+
+
+					</p:submenu>
+
+					<p:submenu label="Gestionar Usuario" icon="ui-icon-suitcase"
+						rendered="#{bMenu.usuarioAdmin or bMenu.usuarioLider}">
+
+
+						<p:menuitem value="Modificar Información personal"
+							icon="ui-icon-contact" onclick="PF('adminUsuarios').show();"/>
+							
+						<p:menuitem value="Solicitudes de otros usuarios"
+							icon="ui-icon-person" onclick="PF('adminSolicitudes').show();"
+							rendered="#{bMenu.usuarioAdmin}" />
+						
+						<p:menuitem value="Administrar usuarios proyecto"
+							icon="ui-icon-person" onclick="PF('adminSolicitudes').show();"
+							rendered="#{bMenu.usuarioLider}" />
+
+						<!--
+						<p:menuitem value="Solicitar eliminación" icon="ui-icon-close"
+							action="#{bAdminUsuarios.btnEliminarUsuario}"
+							rendered="#{bMenu.usuarioLider}" />
+						-->
+
+					</p:submenu>
+
+				</p:menubar>
+
+				<h:panelGroup styleClass="cerrar">
+
+					<p:commandLink value="Crear usuario"  onclick="PF('adminUsuarios').show();"
+						rendered="#{bMenu.sinUsuario}" />
+
+					<p:commandLink value="Ingresar" action="ingresoUsuario"
+						rendered="#{bMenu.sinUsuario}" />
+
+					<p:outputLabel
+						value="Bienvenido #{bMenu.usuarioLogueado.nombre} #{bMenu.usuarioLogueado.apellido}"
+						rendered="#{!bMenu.sinUsuario}"
+						 />
+
+					<p:commandButton actionListener="#{bMenu.btnCerrarSesion}"
+						icon="ui-icon-circle-close" title="Cerrar Sesión"
+						styleClass="fondo" rendered="#{!bMenu.sinUsuario}" />
+				</h:panelGroup>
+
+			</p:panelGrid>
+
+			<p:dialog header="Modal Dialog" widgetVar="enConstruccion"
+				modal="true" height="100">
+				<h:outputText value="En construcción" />
+			</p:dialog>
+
+		</h:form>
+		
+		<p:dialog widgetVar="adminUsuarios"
+				modal="true" height="400px" resizable="false" draggable="false">
+				<ui:include src="/paginas/adminUsuario.xhtml"></ui:include>
+		</p:dialog>
+		
+		<p:dialog widgetVar="adminSolicitudes"
+				modal="true" height="400px" width="600px" resizable="false" draggable="false">
+				<ui:include src="/paginas/adminSolicitudes.xhtml"></ui:include>
+		</p:dialog>		
+		
+	</ui:composition>
+</body>
+</html>
